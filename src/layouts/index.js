@@ -27,9 +27,10 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Grackl
         </Link>
       </h1>
+      <p style={{ color: 'white' }}>A bird's eye view of Digital Projects at the City of Austin.</p>
     </div>
   </div>
 )
