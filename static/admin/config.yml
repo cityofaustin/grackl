@@ -16,7 +16,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Summary Description", name: "summary", widget: "markdown"}
-      - {label: "Stage", name: "stage", widget: "select"}
+      - {label: "Stage", name: "stage", widget: "select", options: ["Proposed", "Planning", "Implementing", "Live"]}
       - {label: "Budget", name: "budget", widget: "number"}
       - {label: "Funding Source", name: "funding_source", widget: "string"}
       - {label: "Lead Department", name: "department", widget: "string"}
