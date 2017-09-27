@@ -17,10 +17,10 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Summary Description", name: "summary", widget: "markdown"}
       - {label: "Stage", name: "stage", widget: "select", options: ["Proposed", "Planning", "Implementing", "Live"]}
-      - {label: "Budget", name: "budget", widget: "number"}
-      - {label: "Funding Source", name: "funding_source", widget: "string"}
-      - {label: "Lead Department", name: "department", widget: "string"}
-      - {label: "Partner Organizations", name: "partners", widget: "string"}
-      - {label: "Contact Person", name: "contact_name", widget: "string"}
-      - {label: "Contact Email", name: "contact_email", widget: "string"}
-      - {label: "Related City Goals", name: "goals", widget: "string"}
+      - {label: "Budget", name: "budget", widget: "number", required: false}
+      - {label: "Funding Source", name: "funding_source", widget: "string", required: false}
+      - {label: "Lead Department", name: "department", widget: "string", required: false}
+      - {label: "Partner Organizations", name: "partners", widget: "string", required: false}
+      - {label: "Contact Person", name: "contact_name", widget: "string", required: false}
+      - {label: "Contact Email", name: "contact_email", widget: "string", required: false}
+      - {label: "Related City Goals", name: "goals", widget: "string", required: false}
