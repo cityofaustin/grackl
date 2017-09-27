@@ -8,17 +8,6 @@ publish_mode: editorial_workflow
 media_folder: "src/images" # where media files will be stored in the repo
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "src/pages/blog" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Path", name: "path", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
   - name: "project"
     label: "Project"
     folder: "src/pages/project"
@@ -26,4 +15,12 @@ collections:
     slug: "{{title}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Summary Description", name: "summary", widget: "markdown"}
+      - {label: "Stage", name: "stage", widget: "select"}
+      - {label: "Budget", name: "budget", widget: "number"}
+      - {label: "Funding Source", name: "funding_source", widget: "string"}
+      - {label: "Lead Department", name: "department", widget: "string"}
+      - {label: "Partner Organizations", name: "partners", widget: "string"}
+      - {label: "Contact Person", name: "contact_name", widget: "string"}
+      - {label: "Contact Email", name: "contact_email", widget: "string"}
+      - {label: "Related City Goals", name: "goals", widget: "string"}
