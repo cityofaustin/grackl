@@ -1,0 +1,13 @@
+
+.usa-sidenav-list {
+  @include usa-sidenav-list;
+}
+
+.usa-sidenav-sub_list {
+  @include usa-sidenav-sublist;
+  display: none;
+}
+
+.usa-current ~ .usa-sidenav-sub_list {
+  display: block;
+}

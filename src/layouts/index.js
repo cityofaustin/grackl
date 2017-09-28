@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
 import './index.css'
+import "../lib/styles/zilker.scss"
 
 const Header = () => (
   <div
