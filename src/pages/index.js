@@ -2,12 +2,12 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 export default ({ data }) => {
-  const postLength = data.allMarkdownRemark.edges.length;
+  const projectCount = data.allMarkdownRemark.edges.length;
 
   return (
     <div>
       <h1>Projects</h1>
-      <h4>{postLength} Posts</h4>
+      <h4>{projectCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => {
         return (
           <div className="" key={node.id}>
