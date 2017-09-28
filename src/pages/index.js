@@ -14,7 +14,7 @@ export default ({ data }) => {
             <Link to={node.fields.slug}>
               <h3>{node.frontmatter.title}</h3>
             </Link>
-            <p>{node.excerpt}</p>
+            <p>{node.frontmatter.summary}</p>
           </div>
         )
       })}
@@ -24,7 +24,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query AllMarkdownsQuery {
-    allMarkdownRemark(filter: {frontmatter: { layout: { eq: "project" } }}) {
+    allMarkdownRemark(filter: {frontmatter: { type: { eq: "project" } }}) {
       edges {
         node {
           id
@@ -34,6 +34,7 @@ export const query = graphql`
             path
             date
             parent
+            summary
           }
           fields {
             slug
