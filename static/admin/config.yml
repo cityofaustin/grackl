@@ -24,3 +24,4 @@ collections:
       - {label: "Contact Person", name: "contact_name", widget: "string", required: false}
       - {label: "Contact Email", name: "contact_email", widget: "string", required: false}
       - {label: "Related City Goals", name: "goals", widget: "string", required: false}
+      - {label: "Collection Type", name: "type", widget: "hidden", default: "project"}
