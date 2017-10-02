@@ -7,9 +7,11 @@ import Helmet from 'react-helmet'
 class HtmlHelmet extends Component {
 
   render() {
+    const { title } = this.props.data.site.siteMetadata;
+
     return (
       <Helmet
-        title={this.props.title}
+        title={title}
         meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },

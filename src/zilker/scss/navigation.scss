@@ -13,6 +13,7 @@ $drawer-width: 28rem;
   -webkit-font-smoothing: antialiased;
   position: fixed;
   width: 100%;
+  top: 0;
   .container-fluid {
     padding-right: .5em;
     padding-left: .5em;
@@ -90,6 +91,7 @@ $drawer-width: 28rem;
     }
   }
 }
+
 .site-header {
   -webkit-font-smoothing: antialiased;
   font-family: $font-sans;
