@@ -1,51 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import HtmlHelmet from  '../zilker/HtmlHelmet'
+import PreHeader from  '../zilker/PreHeader'
 
-import './index.css'
+// import './index.css'
 import "../lib/styles/zilker.scss"
 
-const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Grackl
-        </Link>
-      </h1>
-      <p style={{ color: 'white' }}>A bird's eye view of Digital Projects at the City of Austin.</p>
-    </div>
-  </div>
-)
-
 const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Gatsby Default Starter"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header />
+  <div className="home-page">
+    <HtmlHelmet title="Grackl" />
+    <PreHeader />
     <div
       style={{
         margin: '0 auto',
