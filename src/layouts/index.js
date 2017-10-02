@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import HtmlHelmet from  '../zilker/HtmlHelmet'
-import PreHeader from  '../zilker/PreHeader'
-import SiteHeader from  '../zilker/SiteHeader'
+import HtmlHelmet from '../zilker/HtmlHelmet'
+import PreHeader from '../zilker/PreHeader'
+import SiteHeader from '../zilker/SiteHeader'
+import Footer from '../zilker/Footer'
 
 import "../zilker/scss/main.scss"
 
@@ -19,6 +20,7 @@ const TemplateWrapper = ({ children, data }) => (
         </div>
       </div>
     </main>
+    <Footer data={data} />
   </div>
 )
 
