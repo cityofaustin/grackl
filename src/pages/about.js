@@ -1,7 +1,10 @@
 import React from "react"
+import PrimaryButton from "../lib/components/PrimaryButton";
+
 
 const AboutPage = ({ data }) => (
   <div>
+    <PrimaryButton text={'Default'} />
     <h1>
       About {data.site.siteMetadata.title}
     </h1>
