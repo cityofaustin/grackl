@@ -10,7 +10,7 @@ import "../zilker/scss/main.scss"
 const TemplateWrapper = ({ children, data }) => (
   <div>
     <HtmlHelmet data={data} />
-    <PreHeader />
+    <PreHeader data={data} />
     <SiteHeader data={data} />
     <main className="main">
       <div className="container container-fluid">

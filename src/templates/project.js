@@ -3,7 +3,7 @@ import React from "react"
 export default ({ data }) => {
   const project = data.markdownRemark
   return (
-    <div>
+    <div className="page-section">
       <h1>
         {project.frontmatter.title}
       </h1>

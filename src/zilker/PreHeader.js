@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class PreHeader extends Component {
 
   render() {
+    const { title } = this.props.data.site.siteMetadata;
+
     return (
       <header className="pre-header">
         {/* This is where a Google Translate plugin might go */}
@@ -24,7 +26,7 @@ class PreHeader extends Component {
           </div>
           <div className="mobile-site-title start-xs col-xs">
             <span>
-              Design, Technology, <nobr>&amp; Innovation</nobr> Fellows
+              {title}
             </span>
           </div>
           {/* This is where the Google Translate controls might go. */}
