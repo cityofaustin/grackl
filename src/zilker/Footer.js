@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SiteNav from './SiteNav';
 
 class Footer extends Component {
 
@@ -13,16 +14,7 @@ class Footer extends Component {
           </div>
           <div className="row center-xs">
             <div className="footer-menu">
-              <nav>
-                <ul className="top-level-list">
-                  <li>
-                    <a href="#" title="Home" role="menuitem">Nav Item</a>
-                  </li>
-                  <li>
-                    <a href="#" title="Home" role="menuitem">Nav Item</a>
-                  </li>
-                </ul>
-              </nav>
+              <SiteNav />
             </div>
           </div>
         </div>
