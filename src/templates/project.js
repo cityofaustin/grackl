@@ -9,8 +9,9 @@ const md = markdownIt({
 
 export default ({ data }) => {
   const project = data.markdownRemark
-  const projectSummary = typeof node.frontmatter.summary === 'string' ?
-    md.render(node.frontmatter.summary) : '';
+  const projectSummary = typeof project.frontmatter.summary === 'string' ?
+    md.render(project.frontmatter.summary) : '';
+
 
   return (
     <div className="page-section">
