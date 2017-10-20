@@ -16,7 +16,7 @@ export default ({ data }) => {
       <h1>Projects</h1>
       <h4>{projectCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => {
-        let projectSummary = md.render(node.frontmatter.summary);
+        let projectSummary = md.render(node.frontmatter.summary || '');
 
         return (
           <div className="" key={node.id}>
