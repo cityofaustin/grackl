@@ -9,15 +9,15 @@ const md = markdownIt({
 
 export default ({ data }) => {
   const project = data.markdownRemark
-  const projectSummary = md.render(project.frontmatter.summary)
-
+  const projectSummary = typeof node.frontmatter.summary === 'string' ?
+    md.render(node.frontmatter.summary) : '';
 
   return (
     <div className="page-section">
       <h1>
         {project.frontmatter.title}
       </h1>
-      <div dangerouslySetInnerHTML={{ __html: project.html || projectSummary }} />
+      <div dangerouslySetInnerHTML={{ __html: projectSummary }} />
     </div>
   )
 }
