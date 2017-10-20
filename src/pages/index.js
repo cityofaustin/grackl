@@ -1,5 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import markdownIt from 'markdown-it';
+
+const md = markdownIt({
+  html: true,
+  linkify: true,
+  typographer: true
+});
 
 export default ({ data }) => {
   const projectCount = data.allMarkdownRemark.edges.length;
@@ -9,12 +16,14 @@ export default ({ data }) => {
       <h1>Projects</h1>
       <h4>{projectCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => {
+        let projectSummary = md.render(node.frontmatter.summary);
+
         return (
           <div className="" key={node.id}>
             <Link to={node.fields.slug}>
               <h3>{node.frontmatter.title}</h3>
             </Link>
-            <p>{node.frontmatter.summary}</p>
+            <p dangerouslySetInnerHTML={{ __html: projectSummary }} />
           </div>
         )
       })}
