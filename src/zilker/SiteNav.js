@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import navItems from './nav/navItems';
 
 class SiteNav extends Component {
 
@@ -6,17 +7,13 @@ class SiteNav extends Component {
     return (
       <nav>
         <ul className="top-level-list">
-          {/* TODO: Map over nav items */}
-          <li>
-            <a href="#" title="{{ item.label }}" role="menuitem">
-              NavLabel
-            </a>
-          </li>
-          <li>
-            <a href="#" title="{{ item.label }}" role="menuitem">
-              NavLabel
-            </a>
-          </li>
+          { navItems.map((item, i) => (
+            <li key={i}>
+              <a href={item.path} title={item.title} role="menuitem">
+                {item.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     );
