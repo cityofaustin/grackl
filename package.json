@@ -12,6 +12,7 @@
     "gatsby-source-filesystem": "^1.5.1",
     "gatsby-transformer-remark": "^1.7.12",
     "markdown-it": "^8.4.0"
+    "url-slug": "^2.0.0"
   },
   "keywords": [
     "gatsby"
