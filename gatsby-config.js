@@ -11,6 +11,15 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-source-airtable-local`,
+      options: {
+        apiKey: `keyssV4KNWdZD5AGR`,
+        baseId: `appuWc6duIrqvsZQt`,
+        tableName: `projects`,
+        tableView: `Grid view`
+      }
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`
