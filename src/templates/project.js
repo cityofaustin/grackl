@@ -1,11 +1,4 @@
 import React from "react"
-import markdownIt from 'markdown-it';
-
-const md = markdownIt({
-  html: true,
-  linkify: true,
-  typographer: true
-});
 import {FormattedNumber} from "react-intl"
 
 export default ({ data }) => {
