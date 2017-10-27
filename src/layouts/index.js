@@ -1,4 +1,5 @@
 import React from 'react'
+import {IntlProvider} from 'react-intl'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import HtmlHelmet from '../zilker/HtmlHelmet'
@@ -9,19 +10,21 @@ import Footer from '../zilker/Footer'
 import "../zilker/scss/main.scss"
 
 const TemplateWrapper = ({ children, data }) => (
-  <div>
-    <HtmlHelmet data={data} />
-    <PreHeader data={data} />
-    <SiteHeader data={data} />
-    <main className="main">
-      <div className="container container-fluid">
-        <div className="row">
-          {children()}
+   <IntlProvider locale="en">
+    <div>
+      <HtmlHelmet data={data} />
+      <PreHeader data={data} />
+      <SiteHeader data={data} />
+      <main className="main">
+        <div className="container container-fluid">
+          <div className="row">
+            {children()}
+          </div>
         </div>
-      </div>
-    </main>
-    <Footer data={data} />
-  </div>
+      </main>
+      <Footer data={data} />
+    </div>
+  </IntlProvider>
 )
 
 TemplateWrapper.propTypes = {
