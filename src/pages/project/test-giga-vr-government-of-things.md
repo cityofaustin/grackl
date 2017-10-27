@@ -1,5 +1,5 @@
 ---
-title: '[Test] Giga-VR Government-of-Things'
+title: Giga-VR Government-of-Things
 summary: >-
   Well, they're your parents, you must know them. What are their common
   interests, what do they like to do together? Hey you, get your damn hands off,
@@ -25,3 +25,4 @@ contact_email: mateo.clarke@austintexas.gov
 goals: null
 type: project
 ---
+
