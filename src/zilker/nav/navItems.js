@@ -2,18 +2,12 @@
 //       the Content Model so we can edit in Netlify CMS.
 const navItems = [
   {
-    title: 'Projects',
-    path: '/projects',
+    title: 'Home',
+    path: '/',
   }, {
-    title: 'Departments',
-    path: '/departments',
-  }, {
-    title: 'Partner Orgs',
-    path: '/partner-orgs',
-  }, {
-    title: 'City Goals',
-    path: '/city-goals',
-  }
+    title: 'About Project Tracker',
+    path: '/about',
+  },
 ];
 
 export default navItems;

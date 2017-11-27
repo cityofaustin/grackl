@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Grackl`,
+    title: `ATX Project Tracker`,
     tagline: `A bird's eye view of Digital Projects at the City of Austin.`,
   },
   plugins: [

@@ -12,18 +12,13 @@ class SiteHeader extends Component {
       <header className="site-header">
         <div className="container-fluid container">
           <div className="row">
-            <div className="desktop-site-title start-xs hidden-xs col-md-3">
+            <div className="desktop-site-title start-xs hidden-xs col-md-4">
               <Link to="/" className="no-link">
                 <span className="SiteHeader__title">{title}</span>
               </Link>
             </div>
-            <div className="center-xs col-xs-12 col-md-6 header-menu">
+            <div className="col-xs-12 col-md-8 header-menu">
               <SiteNav />
-            </div>
-            <div className="end-xs hidden-xs col-md-3 button-wrap">
-              <a className="usa-button usa-button-outline" href="#">
-                Button
-              </a>
             </div>
           </div>
         </div>
