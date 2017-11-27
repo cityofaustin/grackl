@@ -1,67 +1,50 @@
-'use strict';
+const Airtable = require('airtable')
+const crypto = require(`crypto`)
+const _ = require('lodash')
+const camelizeObjectKey = require('camelize-object-key')
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.query = undefined;
+exports.sourceNodes = async ({ boundActionCreators },
+                             {apiKey, baseId, tableName, tableView}) => {
 
-var _templateObject = _taggedTemplateLiteral(['\n  query AllAirtableQuery {\n    allAirtable(filter: { publish: { eq: true }}) {\n      edges {\n        node {\n          id\n          projectName\n          projectSummary\n          publish\n          fields {\n            slug\n          }\n        }\n      }\n    }\n  }\n'], ['\n  query AllAirtableQuery {\n    allAirtable(filter: { publish: { eq: true }}) {\n      edges {\n        node {\n          id\n          projectName\n          projectSummary\n          publish\n          fields {\n            slug\n          }\n        }\n      }\n    }\n  }\n']);
+  const { createNode, setPluginStatus } = boundActionCreators
+  const base = new Airtable({
+    apiKey,
+  }).base(baseId);
+  const table = base(tableName);
 
-var _react = require('react');
+  const query = await table.select({
+    view: tableView,
+  })
 
-var _react2 = _interopRequireDefault(_react);
+  console.time(`fetch all Airtable rows`)
+  const all = await query.all();
 
-var _gatsbyLink = require('gatsby-link');
+  console.timeEnd(`fetch all Airtable rows`)
 
-var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
+  setPluginStatus({
+    status: {
+      lastFetched: new Date().toJSON(),
+    },
+  })
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  all.forEach(row => {
+    const camelizedFields = camelizeObjectKey.camelize(row.fields);
+    const gatsbyNode = Object.assign({
+      // Required Gatsby fields
+      id: `Airtable ${tableName} ${row.id}`,
+      parent: "__SOURCE__",
+      children: [],
+      internal: {
+        type: "Airtable",
+        contentDigest: crypto
+          .createHash("md5")
+          .update(JSON.stringify(row))
+          .digest("hex")
+      }
+    }, camelizedFields);
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+    createNode(gatsbyNode);
+  });
 
-exports.default = function (_ref) {
-  var data = _ref.data;
-
-  var projectCount = data.allAirtable.edges.length;
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'h1',
-      null,
-      'Projects'
-    ),
-    _react2.default.createElement(
-      'h4',
-      null,
-      projectCount,
-      ' Posts'
-    ),
-    data.allAirtable.edges.map(function (_ref2) {
-      var node = _ref2.node;
-
-
-      return _react2.default.createElement(
-        'div',
-        { className: '', key: node.id },
-        _react2.default.createElement(
-          _gatsbyLink2.default,
-          { to: node.fields.slug },
-          _react2.default.createElement(
-            'h3',
-            null,
-            node.projectName
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          node.projectSummary
-        )
-      );
-    })
-  );
-};
-
-var query = exports.query = graphql(_templateObject);
+  return
+}
