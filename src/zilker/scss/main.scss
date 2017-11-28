@@ -1,1 +1,11 @@
-@import "all";
+// @import "all";
+@import 'uswds_variables';
+@import '../../../node_modules/uswds/src/stylesheets/uswds';
+
+.coa-flex-container {
+  display: flex;
+}
+
+.coa-flex-item {
+  flex: 1;
+}

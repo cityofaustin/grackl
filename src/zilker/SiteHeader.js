@@ -9,18 +9,22 @@ class SiteHeader extends Component {
     const { title } = this.props.data.site.siteMetadata;
 
     return (
-      <header className="site-header">
-        <div className="container-fluid container">
-          <div className="row">
-            <div className="desktop-site-title start-xs hidden-xs col-md-4">
-              <Link to="/" className="no-link">
-                <span className="SiteHeader__title">{title}</span>
-              </Link>
+      <header className="coa-SiteHeader usa-header usa-header-basic" role="banner">
+        <div className="usa-nav-container">
+          <div className="usa-navbar">
+            <div className="usa-logo" id="basic-logo">
+              <em className="usa-logo-text">
+                <a href="/"
+                  title="Home"
+                  aria-label="Home">
+                  {title}
+                </a>
+              </em>
             </div>
-            <div className="col-xs-12 col-md-8 header-menu">
-              <SiteNav />
-            </div>
+            <button className="usa-menu-btn">Menu</button>
           </div>
+
+          <SiteNav />
         </div>
       </header>
     )

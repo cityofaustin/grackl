@@ -1,11 +1,15 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import SiteIntro from "../zilker/SiteIntro"
+
 export default ({ data }) => {
   const projectCount = data.allAirtable.edges.length;
 
   return (
     <div>
+      <SiteIntro />
+
       <h1>Projects</h1>
       <h4>{projectCount} Posts</h4>
       {data.allAirtable.edges.map(({ node }) => {

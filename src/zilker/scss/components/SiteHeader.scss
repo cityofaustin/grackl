@@ -1,9 +1,12 @@
 @import "../variables";
 
-.SiteHeader__title {
-  width: 272px;
-  height: 40px;
-  font-weight: bold;
-  text-align: left;
-  color: #2c2c2c;
+.coa-SiteHeader.usa-header {
+  .usa-navbar {
+    position: relative;
+    width: 33%;
+  }
+
+  .usa-logo-text {
+    color: #2c2c2c;
+  }
 }

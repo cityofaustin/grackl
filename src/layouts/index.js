@@ -15,12 +15,8 @@ const TemplateWrapper = ({ children, data }) => (
       <HtmlHelmet data={data} />
       <PreHeader data={data} />
       <SiteHeader data={data} />
-      <main className="main">
-        <div className="container container-fluid">
-          <div className="row">
-            {children()}
-          </div>
-        </div>
+      <main className="main-content">
+        {children()}
       </main>
       <Footer data={data} />
     </div>
