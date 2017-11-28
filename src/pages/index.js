@@ -2,6 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 import SiteIntro from "../zilker/SiteIntro"
+import SectionBreakBar from "../zilker/SectionBreakBar"
+import Card from "../zilker/Card"
+
+import cityGoals from "../zilker/data/cityGoals"
 
 export default ({ data }) => {
   const projectCount = data.allAirtable.edges.length;
@@ -9,9 +13,15 @@ export default ({ data }) => {
   return (
     <div>
       <SiteIntro />
+      <SectionBreakBar />
+      <section className="usa-section usa-grid coa-flex-container coa-flex-wrap">        
+        {
+          cityGoals.map(({ title, description }) => {
+            return <Card title={title} description={description} />
+          })
+        }
+      </section>
 
-      <h1>Projects</h1>
-      <h4>{projectCount} Posts</h4>
       {data.allAirtable.edges.map(({ node }) => {
 
         return (
@@ -20,6 +30,7 @@ export default ({ data }) => {
               <h3>{node.projectName}</h3>
             </Link>
             <p>{node.projectSummary}</p>
+            <p>{node.cityStrategicOutcomes}</p>
           </div>
         )
       })}
@@ -36,6 +47,7 @@ export const query = graphql`
           projectName
           projectSummary
           publish
+          cityStrategicOutcomes
           fields {
             slug
           }

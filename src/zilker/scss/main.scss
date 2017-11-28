@@ -9,3 +9,9 @@
 .coa-flex-item {
   flex: 1;
 }
+
+.coa-flex-wrap {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}

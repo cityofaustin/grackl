@@ -1,0 +1,10 @@
+
+.coa-Card {
+  width: 31%;
+  height: 375px;
+  border: 1px solid #979797;
+  margin: .9rem;
+  &:last-child {
+    margin-right: 0;
+  }
+}

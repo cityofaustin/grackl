@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import navItems from './nav/navItems';
+import navItems from './data/navItems';
 
 import "./scss/components/SiteNav.scss"
 
