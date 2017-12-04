@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import "./scss/components/Card.scss"
 
 class Card extends Component {
@@ -8,11 +7,16 @@ class Card extends Component {
     const { title, description } = this.props;
 
     return (
-      <div className="coa-Card">
-        <h4>City Goal</h4>
-        <h3>{title}</h3>
-        <p>{description}</p>
+     <div className="coa-goal"> 
+     <div className="coa-goal_card">
+        <h4 className="coa-city_goal">City Goal</h4>
+        <h3 className="coa-card_title">{title}</h3>
+        <p className="coa-city_goal_description">{description}</p>
       </div>
+      </div>
+
+      
+      
     );
   }
 

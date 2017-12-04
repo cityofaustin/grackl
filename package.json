@@ -14,7 +14,8 @@
     "markdown-it": "^8.4.0",
     "react-intl": "^2.4.0",
     "url-slug": "^2.0.0",
-    "uswds": "^1.4.3"
+    "uswds": "^1.4.3",
+    "gatsby-source-airtable-local": "file:plugins/gatsby-source-airtable-local"
   },
   "keywords": [
     "gatsby"

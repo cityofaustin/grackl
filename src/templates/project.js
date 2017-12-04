@@ -77,6 +77,23 @@ export default ({ data }) => {
 </div>
   </section>
     
+            </a>
+          </p>
+        }
+      </div>
+
+      <div>
+        <h2>Project Goals</h2>
+        <p>{cityStrategicOutcomes}</p>
+      </div>
+
+      <div>
+        <h2>Get in Touch</h2>
+        <p>{contactName}</p>
+        <p>{contactEmail}</p>
+      </div>
+
+    </div>
   )
 }
 
