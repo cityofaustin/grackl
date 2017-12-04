@@ -1,7 +1,6 @@
 import React from "react"
 import {FormattedNumber} from "react-intl"
 import "./Projects.scss"
-import clock from "/usr/local/bin/grackl/src/zilker/img/clock.png"
 
 export default ({ data }) => {
   const {
