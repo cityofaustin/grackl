@@ -8,7 +8,7 @@ class Search extends Component {
     return (
       <div role="search">
         <form className="usa-search usa-search-small">
-          <label for="search-field-small">Search for Projects</label>
+          <label htmlFor="search-field-small">Search for Projects</label>
           <input id="search-field-small" type="search" name="search" />
           <button type="submit">
             <span className="usa-sr-only">Search</span>
