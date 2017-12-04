@@ -34,7 +34,7 @@ More detailed information about the project can be found on [projects.austintexa
 ### Getting Started
 
 1. Clone and `cd` into repo root directory.
-2. To install dependencies: `yarn`
+2. To install dependencies: `npm install`
 3. To run a static server: `gatsby develop`
 
 // TODO: Add any other install steps.

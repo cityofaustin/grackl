@@ -8,7 +8,7 @@ section {}
   padding-bottom: 4.5em;
 }
 .section--gray {
-  background: $color-theme-dark-hover;
+  background: $color-theme-light-hover;
 }
 .section--last {
   margin-bottom: 0;
@@ -16,33 +16,33 @@ section {}
 
 // default colors
 html, html.theme--dark {
-  background: $color-theme-dark-bg;
+  background: $color-theme-light-bg;
   color: $color-white;
   body {
     background: $color-white;
   }
   .pre-header {
-    border-top-color: $color-theme-dark-bg;
-    background: $color-theme-dark-bg;
-    color: $color-theme-dark-text;
+    border-top-color: $color-theme-light-heading;
+    background: $color-theme-light-heading;
+    color: $color-white;
     .control-translate span:hover {
-      color: $color-theme-light-hover;
+      color: $color-white;
     }
     .no-logo {
-      color: $color-theme-dark-hover;
+      color: $color-white;
     }
   }
   .site-header {
-    background: $color-theme-dark-bg;
-    color: $color-theme-dark-text;
+    background: $color-theme-light-bg;
+    color: $color-theme-light-text;
     nav .top-level-list > li > a,
     nav .top-level-list > li > span {
-      color: $color-theme-dark-text;
+      // color: $color-theme-light-text;
       &.active-parent:after {
-        background: $color-theme-dark-accent;
+        background: $color-theme-light-accent;
       }
       &:hover, ul:hover {
-        background: darken($color-theme-dark-bg, 2);
+        background: darken($color-theme-light-bg, 2);
       }
     }
     .usa-button.usa-button-outline {
@@ -69,20 +69,20 @@ html, html.theme--dark {
     }
   }
   .site-footer, .mini-footer {
-    background: $color-theme-dark-bg;
-    color: $color-theme-dark-text;
+    background: $color-theme-light-bg;
+    color: $color-theme-light-text;
     -webkit-font-smoothing: antialiased;
     h1, h2, h3, h4, h5, nav a {
       color: inherit;
     }
     .footer-credits {
-      color: $color-theme-dark-hover;
+      color: $color-theme-light-hover;
     }
 
   }
   .mini-footer {
     a {
-      color: $color-theme-dark-hover;
+      color: $color-theme-light-hover;
     }
   }
 

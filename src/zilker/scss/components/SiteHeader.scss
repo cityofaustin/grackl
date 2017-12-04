@@ -1,6 +1,12 @@
 @import "../variables";
 
-.SiteHeader__title {
-  color: $color-white;
-  text-decoration: none;
+.coa-SiteHeader.usa-header {
+  .usa-navbar {
+    position: relative;
+    width: 33%;
+  }
+
+  .usa-logo-text {
+    color: #2c2c2c;
+  }
 }

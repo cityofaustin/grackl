@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import navItems from './nav/navItems';
+import navItems from './data/navItems';
+
+import "./scss/components/SiteNav.scss"
 
 class SiteNav extends Component {
 
   render() {
     return (
-      <nav>
-        <ul className="top-level-list">
+      <nav role="navigation" className="usa-nav">
+        <button className="usa-nav-close">
+          <img src="../../dist/img/close.svg" alt="close" />
+        </button>
+        <ul className="usa-nav-primary">
           { navItems.map((item, i) => (
-            <li key={i}>
-              <a href={item.path} title={item.title} role="menuitem">
+            <li key={i} className="SiteNav__top-level-list-items">
+              <a href={item.path} title={item.title} role="menuitem" className="usa-nav-link">
                 {item.title}
               </a>
             </li>

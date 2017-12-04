@@ -3,6 +3,7 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const urlSlug = require('url-slug')
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
@@ -12,6 +13,13 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       node,
       name: `slug`,
       value: slug,
+    })
+  }
+  if (node.internal.type === `Airtable`) {
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/projects/${urlSlug(node.projectName)}`,
     })
   }
 }
@@ -34,6 +42,39 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     `
 ).then(result => {
     result.data.allMarkdownRemark.edges.map(({ node }) => {
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve(`./src/templates/project.js`),
+        context: {
+          // Data passed to context is available in page queries as GraphQL variables.
+          slug: node.fields.slug,
+        },
+      })
+    })
+    resolve()
+    })
+  })
+}
+
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allAirtable {
+          edges {
+            node {
+              projectName
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+).then(result => {
+    result.data.allAirtable.edges.map(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/project.js`),

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Grackl`,
+    title: `ATX Project Tracker`,
     tagline: `A bird's eye view of Digital Projects at the City of Austin.`,
   },
   plugins: [
@@ -10,6 +10,15 @@ module.exports = {
         name: `src`,
         path: `${__dirname}/src/`,
       },
+    },
+    {
+      resolve: `gatsby-source-airtable-local`,
+      options: {
+        apiKey: `keyssV4KNWdZD5AGR`,
+        baseId: `appuWc6duIrqvsZQt`,
+        tableName: `projects`,
+        tableView: `Grid view`
+      }
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
