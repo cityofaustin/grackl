@@ -1,0 +1,33 @@
+.coa-Footer {
+  background: #5b616a;
+  color: #ffffff;
+
+  .usa-nav {
+    background: #5b616a;
+  }
+  .usa-nav-primary a {
+    color: #ffffff;
+  }
+  a {
+    color: #ffffff;
+    &:visited {
+      color: #ffffff;
+    }
+  }
+}
+
+.coa-Footer__container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1040px;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.coa_Footer__logo {
+  padding: 1rem;
+  img {
+    max-width: 84px;
+    max-height: 84px;
+  }
+}

@@ -1,7 +1,33 @@
-.SiteNav__top-level-list-items {
+$breakpoint-mobile: 740px;
+
+.coa-SiteNav__top-level-list-items {
 	text-transform: uppercase;
 	font-size: 14px;
 	letter-spacing: 0.2px;
 	text-align: left;
 	color: #0071bc;
+}
+
+.coa-SiteNav--footer {
+	text-align: right;
+	list-style: none;
+	float: right;
+	padding: 2rem 0;
+	@media (max-width: $breakpoint-mobile) {
+		float: left;
+		padding: 1rem 0;
+	}
+	li {
+		display: inline-block;
+		padding-left: 2.5rem;
+		@media (max-width: $breakpoint-mobile) {
+			display: block;
+		}
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }

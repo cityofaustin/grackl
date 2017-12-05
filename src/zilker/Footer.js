@@ -1,47 +1,21 @@
 import React, { Component } from 'react';
 import SiteNav from './SiteNav';
+import citySeal from './img/coa_seal_transparent_white.png'
+import "./scss/components/Footer.scss"
+
 
 class Footer extends Component {
 
   render() {
     return (
-      <footer className="site-footer main">
-        <div className="container-fluid">
-          <div className="row center-xs">
-            <div className="footer-logo">
-              {/* TODO: Insert City Seal */}
+      <footer className="coa-Footer site-footer main">
+        <div className="coa-Footer__container">
+          <div className="row">
+            <div className="col-xs-3 coa_Footer__logo">
+              <img src={citySeal} alt="City of Austin Seal" className="coa_Footer__logo" />
             </div>
-          </div>
-          <div className="row center-xs">
-            <div className="footer-menu">
-              <SiteNav />
-            </div>
-          </div>
-        </div>
-        <div className="mini-footer main">
-          <div className="container-fluid">
-            <div className="row center-xs end-sm">
-              <div className="mini-footer--left start-sm center-xs col-sm-2">
-                <a href="/innovation-fellows/privacy">Privacy Policy</a>
-              </div>
-              <div className="mini-footer--center footer-credits center-xs col-sm-8">
-                <span className="footer-credits">Office of Innovation • Communications &amp; Technology Management</span>
-              </div>
-              <div className="mini-footer--right end-sm center-xs col-sm-2">
-                <a href="https://medium.com/city-of-austin-design-technology-innovation"
-                  target="_blank" title="Read Medium Posts by @Civiqueso" className="link--external">
-                  {/* TODO: Insert Medium Post SVG */}
-                </a>
-                <a href="https://github.com/cityofaustin" target="_blank"
-                  title="Check out the City of Austin's Open Source projects"
-                  className="link--external">
-                  {/* TODO: Insert Github SVG */}
-                </a>
-                <a href="https://twitter.com/civiqueso" target="_blank"
-                  title="Read Tweets by @Civiqueso" className="link--external">
-                  {/* TODO: Insert Twitter */}
-                </a>
-              </div>
+            <div className="coa_Footer__nav footer-menu col-xs-9">
+              <SiteNav footer={true} />
             </div>
           </div>
         </div>
