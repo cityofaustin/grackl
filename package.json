@@ -7,15 +7,16 @@
     "gatsby": "^1.9.36",
     "gatsby-cli": "^1.1.6",
     "gatsby-link": "^1.6.15",
+    "gatsby-plugin-google-analytics": "^1.0.13",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.12",
+    "gatsby-source-airtable-local": "file:plugins/gatsby-source-airtable-local",
     "gatsby-source-filesystem": "^1.5.1",
     "gatsby-transformer-remark": "^1.7.12",
     "markdown-it": "^8.4.0",
     "react-intl": "^2.4.0",
     "url-slug": "^2.0.0",
-    "uswds": "^1.4.3",
-    "gatsby-source-airtable-local": "file:plugins/gatsby-source-airtable-local"
+    "uswds": "^1.4.3"
   },
   "keywords": [
     "gatsby"
