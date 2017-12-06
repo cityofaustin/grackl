@@ -29,7 +29,7 @@ class GoalCardsGroup extends Component {
     })
 
     return (
-      <div className="row">
+      <div className="row around-xs">
         { cards.map(({ title, fullTitle, description }, i) => {
 
             const cardProjects = _.find(projectsByCityGoal, (item) => {
