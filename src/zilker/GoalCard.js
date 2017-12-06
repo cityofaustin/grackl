@@ -3,10 +3,10 @@ import Link from 'gatsby-link'
 
 import "./scss/components/Card.scss"
 
-class Card extends Component {
+class GoalCard extends Component {
 
   render() {
-    const { title, description, projects } = this.props;
+    const { title, description, projects, fullTitle } = this.props;
 
     return (
       <div className="coa-Card">
@@ -35,19 +35,16 @@ class Card extends Component {
         <div className="coa-Card__footer">
           <div className="coa-Card__footer-text">
             {/* TODO: figure out routing for project with filter */}
-            <Link to="projects/#">
+            <Link to={`projects?goal=${fullTitle}`}>
               {/* TODO: Add carrat right icon */}
               View all {title} projects
             </Link>
           </div>
         </div>
       </div>
-
-
-
     );
   }
 
 }
 
-export default Card;
+export default GoalCard;

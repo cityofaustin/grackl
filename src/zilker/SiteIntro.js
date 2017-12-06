@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import Search from "../zilker/Search"
 
 import "./scss/components/SiteIntro.scss"
+import img from "./img/austin_downtown.jpg"
 
 class SiteIntro extends Component {
 
@@ -24,8 +25,7 @@ class SiteIntro extends Component {
           </div>
         </div>
         <div className="usa-width-one-third">
-          {/* TODO: Get photo asset */}
-          <img src="http://lorempixel.com/300/200/city/" alt="TODO" />
+          <img src={img} alt="City of Austin from above" />
         </div>
       </section>
     );

@@ -1,0 +1,62 @@
+.coa-ProjectCard {
+  width: 260px;
+  height: 375px;
+  border: 1px solid #979797;
+  margin: .9rem;
+  position: relative;
+  overflow: hidden;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.coa-ProjectCard__image {
+  height: 130px;
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: center;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.coa-ProjectCard__body {
+  padding: .75rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.coa-ProjectCard__stage-text {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  text-align: right;
+  color: #4a4a4a;
+  flex: 1 1 0%;
+}
+
+.coa-ProjectCard__title-text {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #0071bc;
+  margin: 1rem 0 .5rem;
+  line-height: 1.5rem;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+}
+
+.coa-ProjectCard__plain-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #212121;
+  margin: 0;
+}
+
+.coa-ProjectCard__field {
+  font-size: 14px;
+  flex: 1 1 0%;
+  margin: 0;
+}
+
+.coa-ProjectCard__label {
+  margin: .5rem 0 0;
+  font-weight: bold;
+}

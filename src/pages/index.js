@@ -14,7 +14,7 @@ export default ({ data }) => {
     <div>
       <SiteIntro />
       <SectionBreakBar />
-      <CardSection cards={cityGoals} projects={projects} />
+      <CardSection cards={cityGoals} projects={projects} type="goals" />
     </div>
   )
 }
