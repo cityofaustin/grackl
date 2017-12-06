@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import navItems from './data/navItems';
-
+import closeImg from './img/close.svg'
 import "./scss/components/SiteNav.scss"
 
 class SiteNav extends Component {
@@ -25,9 +25,9 @@ class SiteNav extends Component {
       )
     } else {
       return (
-        <nav role="navigation" className="usa-nav">
-          <button className="usa-nav-close">
-            <img src="../../dist/img/close.svg" alt="close" />
+        <nav role="navigation" className={this.props.isNavOpen ? "usa-nav-open" : "usa-nav"}>
+          <button className="usa-nav-close coa-nav-close" onClick={this.props.toggleNav}>
+            <img src={closeImg} alt="close"  />
           </button>
           <ul className="usa-nav-primary">
             { navItems.map((item, i) => (

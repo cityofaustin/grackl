@@ -9,7 +9,6 @@ class Search extends Component {
     this.setState({
       searchString: e.target.value
     })
-    console.log(this.state.searchString)
   }
 
   render() {

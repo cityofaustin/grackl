@@ -5,8 +5,17 @@ import Link from 'gatsby-link'
 import "./scss/components/SiteHeader.scss"
 
 class SiteHeader extends Component {
+  state = { isNavOpen: false }
+
+  toggleNav = (e) => {
+    this.setState({
+      isNavOpen: !this.state.isNavOpen
+    })
+  }
+
   render() {
     const { title } = this.props.data.site.siteMetadata;
+
 
     return (
       <header className="coa-SiteHeader usa-header usa-header-basic" role="banner">
@@ -21,10 +30,10 @@ class SiteHeader extends Component {
                 </a>
               </em>
             </div>
-            <button className="usa-menu-btn">Menu</button>
+            <button className="usa-menu-btn" onClick={this.toggleNav}>Menu</button>
           </div>
 
-          <SiteNav />
+          <SiteNav toggleNav={this.toggleNav} isNavOpen={this.state.isNavOpen} />
         </div>
       </header>
     )

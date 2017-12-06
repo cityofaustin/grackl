@@ -1,12 +1,22 @@
 @import "../variables";
 
+// TODO: fix this magic number
+$breakpoint: 950px;
+
 .coa-SiteHeader.usa-header {
   .usa-navbar {
     position: relative;
     width: 33%;
+    @media(max-width: $breakpoint) {
+      width: 100%;
+    }
   }
 
   .usa-logo-text {
     color: #2c2c2c;
   }
+}
+
+.usa-menu-btn {
+  display: none;
 }
