@@ -2,6 +2,8 @@ import React from "react"
 import {FormattedNumber} from "react-intl"
 import "./Projects.scss"
 
+import ClockSvg from "../zilker/ClockSvg.js"
+
 export default ({ data }) => {
   const {
     projectName, projectSummary, link, totalProjectBudget, fundingSource,
@@ -10,8 +12,8 @@ export default ({ data }) => {
   } = data.airtable;
 
   return (
-    <section>
-      <div className="usa-grid-full">
+    <section className="usa-section">
+      <div className="usa-grid">
         <div className="usa-width-three-quarters">
           <h1 className="coa-project_name">
             {projectName}
@@ -25,15 +27,12 @@ export default ({ data }) => {
         </div>
       </div>
 
-      <div className="usa-grid-full">
+      <div className="usa-grid">
         <h3 className="coa-project_phase">
-          <svg width="14" height="14" id="clock-icon" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1024 544v448q0 14-9 23t-23 9h-320q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h224v-352q0-14 9-23t23-9h64q14 0 23 9t9 23zm416 352q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
-          </svg>
+          <ClockSvg />
            &nbsp;{projectStage}
          </h3>
          <hr></hr>
-          <div className="usa-grid-full">
 
           <div className="usa-width-one-fourth">
             <h2 className="coa-city_sub-category">Funding</h2>
@@ -45,13 +44,12 @@ export default ({ data }) => {
               <FormattedNumber value={totalProjectBudget} style="currency" currency="USD" minimumFractionDigits={0} />
             <br />{fundingSource}</p>
       </div>
-      </div>
 
       </div>
 
 
 
-      <div className="usa-grid-full">
+      <div className="usa-grid">
       <hr></hr>
         <div className="usa-width-one-fourth">
           <h2 className="coa-city_sub-category">Who's Involved</h2>
@@ -64,7 +62,7 @@ export default ({ data }) => {
         </div>
 
 
-      <div className="usa-grid-full">
+      <div className="usa-grid">
       <hr></hr>
         <div className="usa-width-one-fourth">
           <h2 className="coa-city_sub-category">Project Goals</h2>
@@ -74,7 +72,7 @@ export default ({ data }) => {
         </div>
       </div>
 
-      <div className="usa-grid-full">
+      <div className="usa-grid">
       <hr></hr>
         <div className="usa-width-one-fourth">
           <h2 className="coa-city_sub-category">Get in Touch</h2>

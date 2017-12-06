@@ -5,6 +5,7 @@
   margin: .9rem;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
   &:last-child {
     margin-right: 0;
   }
@@ -18,6 +19,10 @@
   background-color: rgba(0, 0, 0, 0.25);
 }
 
+.coa-ProjectCard__svg {
+  margin-right: .2rem;
+}
+
 .coa-ProjectCard__body {
   padding: .75rem 1.5rem 1rem;
   display: flex;
@@ -25,6 +30,10 @@
 }
 
 .coa-ProjectCard__stage-text {
+  padding-top: .2rem;
+}
+
+.coa-ProjectCard__stage {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.2px;
