@@ -1,16 +1,16 @@
 const cityGoals = [
   {
-    title: "Government that works",
+    title: "Government That Works",
     fullTitle: "Government that works",
-    description: "Believing City governmant works effectively and collaboratively for all of us",
+    description: "Believing that city government works effectively and collaboratively for all of us - that it is equitable, ethical, and innovative.",
   }, {
-    title: "Economic & Affordability",
+    title: "Economy & Affordability",
     fullTitle: "Economic Opportunity & Affordability",
-    description: "Having economic opportunities and resources that enable us to thrive in our community",
+    description: "Having economic opportunities and resources that enable us to thrive in our community.",
   }, {
     title: "Safety",
     fullTitle: "Safety",
-    description: "Being safe in our home, at work, and in our community",
+    description: "Being safe in our home, at work, and in our community.",
   }, {
     title: "Health",
     fullTitle: "Health",
@@ -18,11 +18,11 @@ const cityGoals = [
   }, {
     title: "Mobility",
     fullTitle: "Mobility",
-    description: "Getting us where we want to go, when we want to get there, safely and cost-effectively",
+    description: "Getting us where we want to go, when we want to get there, safely and cost-effectively.",
   }, {
-    title: "Cultural & Learning",
+    title: "Culture & Learning",
     fullTitle: "Cultural & Learning Opportunities",
-    description: "Being enriched by Austin's unique civic, cultural, ethnic, and learning opportunities",
+    description: "Being enriched by Austin's unique civic, cultural, ethnic, and learning opportunities.",
   },
 ];
 

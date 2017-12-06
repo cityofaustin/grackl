@@ -10,9 +10,9 @@ import cityGoals from "../zilker/data/cityGoals"
 export default ({ data }) => {
   const projects = data.allAirtable.edges;
 
+
   return (
     <div>
-      <SiteIntro />
       <SectionBreakBar />
       <CardSection cards={cityGoals} projects={projects} />
     </div>
@@ -20,7 +20,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query AllAirtableQuery {
+  query AirtableProject {
     allAirtable(filter: { publish: { eq: true }}) {
       edges {
         node {
