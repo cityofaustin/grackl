@@ -4,6 +4,8 @@ import ClockSvg from "../zilker/ClockSvg.js"
 import img from "./img/austin_downtown.jpg"
 import "./scss/components/ProjectCard.scss"
 
+import departments from "../zilker/data/departments"
+
 class ProjectCard extends Component {
 
   render() {
@@ -47,7 +49,18 @@ class ProjectCard extends Component {
                 Primary Department
               </dt>
               <dd className="coa-ProjectCard__plain-text">
-                {leadDepartment.join(", ")}
+                {
+                  leadDepartment.length === 1 ? departments[leadDepartment[0]] && departments[leadDepartment[0]]["fields"]["Dept long name"] :
+                    leadDepartment.map((d, i) => {
+                      return (
+                        <span>
+                          {departments[d] && departments[d]["fields"]["Dept long name"]}
+                          { i == 0 ? <span>, </span> : '' }
+                        </span>
+                      )
+                    }
+                  )
+                }
               </dd>
               <dt className="coa-ProjectCard__label">
                 City Goals

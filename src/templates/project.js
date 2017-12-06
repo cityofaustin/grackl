@@ -1,8 +1,13 @@
 import React from "react"
 import {FormattedNumber} from "react-intl"
 import "./Projects.scss"
+import departments from "../zilker/data/departments"
 
 import ClockSvg from "../zilker/ClockSvg.js"
+
+const renderDepts = (leadDepartment) => {
+  return departments[leadDepartment[0]]
+}
 
 export default ({ data }) => {
   const {
@@ -55,8 +60,24 @@ export default ({ data }) => {
           <h2 className="coa-city_sub-category">Who's Involved</h2>
         </div>
         <div className="usa-width-three-fourths">
-          <p className="coa-project-body">Project champions: {leadDepartment}
-          {/* TODO: Currently getting a reference ID. Need Dept name */}
+          <p className="coa-project-body">
+            Project champions: &nbsp;
+            {
+              leadDepartment.length === 1 && departments[leadDepartment[0]] ?
+                 <a href={departments[leadDepartment[0]]["fields"]["Home page"]} target="_blank">
+                   {departments[leadDepartment[0]] && departments[leadDepartment[0]]["fields"]["Dept long name"]}
+                 </a>
+              :
+                leadDepartment.map((d, i) => {
+                  return (
+                    <a href={departments[d] && departments[d]["fields"]["Home page"]} target="_blank">
+                      {departments[d] && departments[d]["fields"]["Dept long name"]}
+                      { i == 0 ? <span>, </span> : '' }
+                    </a>
+                  )
+                }
+              )
+            }
           </p>
         </div>
         </div>
