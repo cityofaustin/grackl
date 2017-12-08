@@ -13,7 +13,7 @@ class SiteIntro extends Component {
       <section className="usa-section usa-grid">
         <div className="row">
           <div className="col-xs-12 col-sm-8">
-            <h2>Improving Visibility into City Projects</h2>
+            <h2 className="coa-intro_head">Improving Visibility into City Projects</h2>
             <p>ATX Project Tracker seeks to make it easier for people in Austin to have a sense of what projects the City is working on, the state of progress of those projects, how the projects relate to critical goals, and how they are funded. <a href="/about">Learn more about project tracking and strategic outcomes.</a>
             </p>
             <div className="row">
@@ -27,7 +27,7 @@ class SiteIntro extends Component {
           </div>
 
           <div className="col-xs-12 col-sm-4 first-xs last-sm">
-            <img src={img} alt="City of Austin from above" />
+            <img src={img} alt="City of Austin from above" align="center"/>
           </div>
         </div>
       </section>
