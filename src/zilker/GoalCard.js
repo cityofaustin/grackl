@@ -37,7 +37,7 @@ class GoalCard extends Component {
             {/* TODO: figure out routing for project with filter */}
             <Link to={`projects?goal=${fullTitle}`}>
               {/* TODO: Add carrat right icon */}
-              View all {title} projects
+              View {title} projects
             </Link>
           </div>
         </div>

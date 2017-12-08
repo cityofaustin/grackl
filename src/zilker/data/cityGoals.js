@@ -12,7 +12,7 @@ const cityGoals = [
     fullTitle: "Safety",
     description: "Being safe in our home, at work, and in our community.",
   }, {
-    title: "Health",
+    title: "Health & Environment",
     fullTitle: "Health",
     description: "Enjoying a sustainable environment and a healthy life, physically and mentally.",
   }, {
@@ -20,7 +20,7 @@ const cityGoals = [
     fullTitle: "Mobility",
     description: "Getting us where we want to go, when we want to get there, safely and cost-effectively.",
   }, {
-    title: "Culture & Learning",
+    title: "Culture & Lifelong Learning",
     fullTitle: "Cultural & Learning Opportunities",
     description: "Being enriched by Austin's unique civic, cultural, ethnic, and learning opportunities.",
   },
