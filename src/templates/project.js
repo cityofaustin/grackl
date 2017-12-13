@@ -27,7 +27,7 @@ export default ({ data }) => {
             {projectSummary}
           </h2>
           <div className="coa-project_summary">
-            { link && <a href={link}>Learn more about this project.</a>}
+            { link && <a href={link} target="_blank">Learn more about this project.</a>}
           </div>
         </div>
       </div>

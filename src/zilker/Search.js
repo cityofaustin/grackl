@@ -5,16 +5,21 @@ class Search extends Component {
   state = { searchString: '' }
 
   updateSearchValue = (e) => {
-    e.preventDefault;
+    e.preventDefault();
     this.setState({
-      searchString: e.target.value
+      searchString: e.target.value.toLowerCase()
     })
+  }
+
+  navigateToSearch = (e) => {
+    e.preventDefault();
+    navigateTo(`/projects?search=${this.state.searchString}`)
   }
 
   render() {
     return (
       <div role="search">
-        <form className="usa-search usa-search-small" onSubmit={ () => navigateTo(`/projects?search=${this.state.searchString}`)}>
+        <form className="usa-search usa-search-small" onSubmit={(e) => this.navigateToSearch(e)}>
           <label htmlFor="search-field-small">Search for Projects</label>
           <input
             id="search-field-small"
