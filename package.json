@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "Grackl (aka Project Tracking Tool)",
+  "description": "A bird's eye view of Digital Projects at the City of Austin",
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
@@ -19,7 +19,10 @@
     "uswds": "^1.4.3"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "grackle",
+    "grackl",
+    "austin"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -27,7 +30,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm i -g gatsby-cli"
   },
   "devDependencies": {
     "prettier": "^1.6.1"
