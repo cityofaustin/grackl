@@ -13,7 +13,7 @@ class CardSection extends Component {
 
     return (
       <section className="coa-CardSection usa-section usa-grid coa-flex-container coa-flex-wrap">
-        <div className="row around-xs">
+        <div className="row top-xs">
           {
             (type === "project") && cards.map((card) => {
               return <ProjectCard {...card.node} />
