@@ -74,7 +74,7 @@ const AboutPage = ({ data }) => (
           <dd className="coa-About__sidebar__plain-text">This stage includes research to understand what type of solution, product, or service should be put in place. Activities in this stage include discovery, needs assessments, and requirements gathering.
 
           </dd>
-        <dt className="coa-About__sidebar">IMPLEMENTING</dt>
+        <dt className="coa-About__sidebar">IN PROGRESS</dt>
           <dd className="coa-About__sidebar__plain-text">This stage involves executing the solution, product, or service, including design, development, testing, and solution implementation.
 
           </dd>
