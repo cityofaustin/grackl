@@ -58,29 +58,35 @@ const AboutPage = ({ data }) => (
   
     <div className="col-xs-12 col-sm-4">
    <div className="coa-About__sidebar__head"> <ClockSvg />
-      Phases
+      Project Stages
     </div>
-    <div className="coa-About__sidebar__title"></div>
+    <div className="coa-About__sidebar__plain-text">
+    The ATX Project Tracker uses four stages to describe a project’s progress or status. Definitions for each stage are below.
+    </div>
+   
    
     
       <dl className="coa-about__phase">
         <dt className="coa-About__sidebar">PLANNING</dt>
-          <dd className="coa-About__sidebar__plain-text">Identifying, qualifying, and scoping a project. Includes leads or opportunities that have just been identified, but haven't yet decided to pursue.
+          <dd className="coa-About__sidebar__plain-text">In this stage, people are identifying and scoping the project. It includes leads or opportunities that have been identified, but are not yet in progress.
           </dd>
         <dt className="coa-About__sidebar">LEARNING</dt>
-          <dd className="coa-About__sidebar__plain-text">Includes research, discovery, needs assessment, and requirements gathering
+          <dd className="coa-About__sidebar__plain-text">This stage includes research to understand what type of solution, product, or service should be put in place. Activities in this stage include discovery, needs assessments, and requirements gathering.
+
           </dd>
         <dt className="coa-About__sidebar">IMPLEMENTING</dt>
-          <dd className="coa-About__sidebar__plain-text">Execution and active project work, including design, development, testing, solution implementation.
+          <dd className="coa-About__sidebar__plain-text">This stage involves executing the solution, product, or service, including design, development, testing, and solution implementation.
+
           </dd>
         <dt className="coa-About__sidebar">COMPLETE/LIVE</dt>
-          <dd className="coa-About__sidebar__plain-text">Finished implementation, and solution/product/service is now live or operational. Includes after-action reporting to document and evaluate project results. Solution, product or service expected to be iterated or reassessed for improvement over time.
+          <dd className="coa-About__sidebar__plain-text">In this stage, progress is completed, and solution, product, or service is now live or operational. It includes after-action reporting to document and measure project results. A solution, product, or service is expected to be refined or improved over time.
           </dd>
       </dl>
      
   
       <div className="coa-About__sidebar__title">Strategic Goals</div>
-      <div className="coa-About__sidebar__plain-text">On April 5, 2017 the Council affirmed both a <a href="https://austinstrategicplan.bloomfire.com/posts/1373079-city-of-austin-strategic-direction">strategic vision</a> and six corresponding strategic outcomes to guide the City of Austin over the next three to five years. 
+      <div className="coa-About__sidebar__plain-text">In 2017 Austin’s City Council adopted a <a href="https://austinstrategicplan.bloomfire.com/posts/1373079-city-of-austin-strategic-direction">strategic vision</a> and six corresponding strategic outcomes to guide the City of Austin over the next three to five years. The ATX Project Tracker uses these goal areas to tell the story about what results each project aims to achieve. Definitions for each outcome are below.
+ 
       
    
      
@@ -90,35 +96,41 @@ const AboutPage = ({ data }) => (
       <dt className="coa-About__sidebar__goal__title"> Government That Works
       </dt>
       
-          <dd className="coa-About__sidebar__plain-text">Identifying, qualifying, and scoping a project. Includes leads or opportunities that have just been identified, but haven't yet decided to pursue.
+          <dd className="coa-About__sidebar__plain-text">Believing that city government works effectively and collaboratively for all of us - that it is fair, ethical, and innovative.
+
           </dd>
       </p>
 
       <p><MobilitySvg />
       <dt className="coa-About__sidebar__goal__title">Mobility</dt>
-          <dd className="coa-About__sidebar__plain-text">Includes research, discovery, needs assessment, and requirements gathering
+          <dd className="coa-About__sidebar__plain-text">Getting us where we want to go, when we want to get there, safely and cost-effectively.
+
           </dd>
       </p>
 
       <p><HealthSvg />  
       <dt className="coa-About__sidebar__goal__title">Health</dt>
-          <dd className="coa-About__sidebar__plain-text">Execution and active project work, including design, development, testing, solution implementation.
+          <dd className="coa-About__sidebar__plain-text">Enjoying a sustainable environment and a healthy life, physically and mentally.
+
           </dd>
       </p>
 
       <p><SafetySvg />
           <dt className="coa-About__sidebar__goal__title">Safety</dt>
-          <dd className="coa-About__sidebar__plain-text">Identifying, qualifying, and scoping a project. Includes leads or opportunities that have just been identified, but haven't yet decided to pursue.
+          <dd className="coa-About__sidebar__plain-text">Being safe in our home, at work, and in our community.
+
           </dd>
       </p>
       <p><EconomicSvg />
           <dt className="coa-About__sidebar__goal__title">Economic Opportunity</dt>
-          <dd className="coa-About__sidebar__plain-text">Identifying, qualifying, and scoping a project. Includes leads or opportunities that have just been identified, but haven't yet decided to pursue.
+          <dd className="coa-About__sidebar__plain-text">Having economic opportunities and resources that enable us to thrive in our community.
+
           </dd>
       </p>
       <p><LearningSvg />
         <dt className="coa-About__sidebar__goal__title">Culture and Lifelong Learning</dt>
-          <dd className="coa-About__sidebar__plain-text">Finished implementation, and solution/product/service is now live or operational. Includes after-action reporting to document and evaluate project results. Solution, product or service expected to be iterated or reassessed for improvement over time.
+          <dd className="coa-About__sidebar__plain-text">Being enriched by Austin's unique civic, cultural, ethnic, and learning opportunities.
+
           </dd>
       </p>
       </dl>
