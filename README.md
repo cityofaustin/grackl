@@ -35,8 +35,7 @@ More detailed information about the project can be found on [projects.austintexa
 
 1. Clone and `cd` into repo root directory.
 2. To install dependencies: `npm install`
-3. Install Gatsby `npm install -g gatsby-cli`
-4. To run a static server: `gatsby develop`
+3. To run a static server: `gatsby develop`
 
 // TODO: Add any other install steps.
 
