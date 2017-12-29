@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
-
 import Search from '../zilker/Search';
 
 class EmptySearchResults extends Component {

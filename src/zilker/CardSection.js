@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 
 import EmptySearchResults from "../zilker/EmptySearchResults";
 import GoalCardsGroup from "../zilker/GoalCardsGroup"
