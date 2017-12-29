@@ -13,54 +13,54 @@ export default ({ data }) => {
   const {
     projectName, projectSummary, link, totalProjectBudget, fundingSource,
     leadDepartment, linksToAnyPartnerOrganizationWebsites, partnerOrganizations,
-    cityStrategicOutcomes, contactName, contactEmail, projectStage, contactTitle
+    cityStrategicOutcomes, contactName, contactEmail, projectStage, contactTitle, primaryStrategicOutcome, secondaryStrategicOutcome,
   } = data.airtable;
 
   return (
-    <section className="usa-section">
-      <div className="usa-grid">
-        <div className="usa-width-three-quarters">
-          <h1 className="coa-project_name">
+    <section className="usa-section usa-grid">
+      <div className="row">
+      <div className="col-xs-12 col-sm-8">
+        <div>
+          <h1 className="coa-project__name">
             {projectName}
           </h1>
-          <h2 className="coa-project_summary">
+        </div>
+          <h2 className="coa-project__summary">
             {projectSummary}
           </h2>
-          <div className="coa-project_summary">
+        <div className="coa-project__summary">
             { link && <a href={link} target="_blank">Learn more about this project.</a>}
-          </div>
         </div>
-      </div>
+        
+      
 
-      <div className="usa-grid">
-        <h3 className="coa-project_phase">
+    <div>
+        <h3 className="coa-project__phase">
           <ClockSvg />
            &nbsp;{projectStage}
          </h3>
          <hr></hr>
 
           <div className="usa-width-one-fourth">
-            <h2 className="coa-city_sub-category">Funding</h2>
+            <h2 className="coa-city__sub-category">Funding</h2>
           </div>
 
 
-      <div className="usa-width-three-fourths">
-            <p className="coa-project-body">Total budget of &nbsp;
+       <div className="usa-width-three-fourths">
+            <p className="coa-project__body">Total budget of &nbsp;
               <FormattedNumber value={totalProjectBudget} style="currency" currency="USD" minimumFractionDigits={0} />
             <br />{fundingSource}</p>
       </div>
 
-      </div>
+    </div>
 
-
-
-      <div className="usa-grid">
+  <div>
       <hr></hr>
         <div className="usa-width-one-fourth">
-          <h2 className="coa-city_sub-category">Who's Involved</h2>
+          <h2 className="coa-city__sub-category">Who's Involved</h2>
         </div>
         <div className="usa-width-three-fourths">
-          <p className="coa-project-body">
+          <p className="coa-project__body">
             Project champions: &nbsp;
             {
               leadDepartment.length === 1 && departments[leadDepartment[0]] ?
@@ -80,33 +80,44 @@ export default ({ data }) => {
             }
           </p>
         </div>
-        </div>
+  </div>
 
 
-      <div className="usa-grid">
+      <div>
       <hr></hr>
         <div className="usa-width-one-fourth">
-          <h2 className="coa-city_sub-category">Project Goals</h2>
+          <h2 className="coa-city__sub-category">Project Goals</h2>
         </div>
         <div className="usa-width-three-fourths">
-          <p className="coa-project-body">{cityStrategicOutcomes.join(', ')}</p>
+          <p className="coa-project__body">
+          <span className="coa-comma">{primaryStrategicOutcome} </span>
+          <span className="coa-comma">{secondaryStrategicOutcome}</span> 
+          </p>
+          
         </div>
       </div>
 
-      <div className="usa-grid">
+      <div>
       <hr></hr>
         <div className="usa-width-one-fourth">
-          <h2 className="coa-city_sub-category">Get in Touch</h2>
+          <h2 className="coa-city__sub-category">Get in Touch</h2>
         </div>
         <div className="usa-width-three-fourths">
-          <p className="coa-project-body">
+          <p className="coa-project_body">
             {contactName}, {contactTitle}
             <br />
             <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
           </p>
         </div>
+      
       </div>
-
+     
+      </div>
+      <div className="col-xs-12 col-sm-4">
+    
+      </div>
+      </div>
+     
   </section>
   )
 }
@@ -127,6 +138,8 @@ export const query = graphql`
       contactEmail
       contactTitle
       projectStage
+      primaryStrategicOutcome
+      secondaryStrategicOutcome
     }
   }
 `

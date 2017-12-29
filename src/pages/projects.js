@@ -45,6 +45,8 @@ export const query = graphql`
           projectSummary
           publish
           cityStrategicOutcomes
+          primaryStrategicOutcome
+          secondaryStrategicOutcome
           projectStage
           leadDepartment
           projectImage {

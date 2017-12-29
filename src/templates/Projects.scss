@@ -1,4 +1,4 @@
-.coa-project_name {
+.coa-project__name {
   font-size: 3.3rem;
   font-weight: 600;
   line-height: 1.5;
@@ -7,7 +7,7 @@
 
 }
 
-.coa-project_summary {
+.coa-project__summary {
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 1.5;
@@ -16,7 +16,7 @@
 
 }
 
-.coa-project_phase {
+.coa-project__phase {
   font-size: 1.4rem;
   line-height: 2.36;
   letter-spacing: 0.8px;
@@ -35,17 +35,18 @@ hr {
 
 }
 
-.coa-city_sub-category {
+.coa-city__sub-category {
   font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 2.0rem;
 
 }
 
-.coa-project-body{
+.coa-project__body{
   line-height: 1.5;
   font-size: 1.8rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
+
 
 #clock-icon {
   display: inline-flex;
@@ -54,3 +55,16 @@ hr {
   fill: grey;
 
 }
+
+.coa-comma:not(:first-child) {
+  margin-left: -.2em;  
+}
+
+.coa-comma:empty {
+  display: none;
+}
+
+.coa-comma:not(:first-child):before {
+  content: ", ";
+}
+
