@@ -20,14 +20,6 @@ module.exports = {
         tableView: `Grid view`
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-110716917-1",
-        // Setting this parameter is optional
-        anonymize: false,
-      },
-    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`
