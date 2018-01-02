@@ -73,3 +73,15 @@
   position: relative;
   top: 3px;
 }
+
+.coa-project__comma:not(:first-child) {
+  margin-left: -.2em;  
+}
+
+.coa-project__comma:empty {
+  display: none;
+}
+
+.coa-project__comma:not(:first-child):before {
+  content: ", ";
+}

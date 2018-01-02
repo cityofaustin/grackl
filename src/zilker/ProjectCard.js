@@ -10,7 +10,7 @@ class ProjectCard extends Component {
 
   render() {
     const {
-      projectName, id, projectSummary, cityStrategicOutcomes, projectStage,
+      projectName, id, projectSummary, primaryStrategicOutcome, secondaryStrategicOutcome, projectStage,
       leadDepartment, projectImage, fields
     } = this.props;
 
@@ -20,9 +20,6 @@ class ProjectCard extends Component {
       projectSummary.substring(0, 100) + "..." :
       projectSummary
 
-    const truncatedGoals = cityStrategicOutcomes.join(', ').length > 60 ?
-      cityStrategicOutcomes.join(', ').substring(0, 60) + "..." :
-      cityStrategicOutcomes.join(', ')
 
     return (
       <Link to={fields.slug} style={{ textDecoration: 'none' }}>
@@ -66,7 +63,9 @@ class ProjectCard extends Component {
                 City Goals
               </dt>
               <dd className="coa-ProjectCard__plain-text">
-                {truncatedGoals}
+                <span className="coa-project__comma">{primaryStrategicOutcome} </span>
+                <span className="coa-project__comma">{secondaryStrategicOutcome}</span>
+                
               </dd>
             </dl>
           </div>
