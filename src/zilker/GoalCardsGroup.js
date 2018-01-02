@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link'
+import Link from 'gatsby-link';
+import _ from 'lodash';
 
 import GoalCard from "../zilker/GoalCard"
 
