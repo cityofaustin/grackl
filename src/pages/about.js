@@ -23,10 +23,10 @@ const AboutPage = ({ data }) => (
       <p className="coa-about__body">
       ATX Project Tracker aims to make it easier for people in Austin to have a better understanding of:
       
-        <ul>• What projects the City is working on,</ul>
-        <ul>• The state of progress of those projects,</ul>
-        <ul>• How the projects relate to critical goals,</ul>
-        <ul>• And how they are funded.</ul>
+        <ul className="coa-about__body">• What projects the City is working on,</ul>
+        <ul className="coa-about__body">• The state of progress of those projects,</ul>
+        <ul className="coa-about__body">• How the projects relate to critical goals,</ul>
+        <ul className="coa-about__body">• And how they are funded.</ul>
         
       The City of Austin consists of 40+ departments and over 13,000 employees serving almost 1 million people. There are tons of City-sponsored projects going on at any given moment in time – street resurfacing, park improvements, service delivery, and research, to name a few. 
       </p>
@@ -57,7 +57,7 @@ const AboutPage = ({ data }) => (
    </div>
   
     <div className="col-xs-12 col-sm-4">
-   <div className="coa-About__sidebar__head"> <ClockSvg />
+   <div className="coa-About__sidebar__head"> 
       Project Stages
     </div>
     <div className="coa-About__sidebar__plain-text">
@@ -67,18 +67,18 @@ const AboutPage = ({ data }) => (
    
     
       <dl className="coa-about__phase">
-        <dt className="coa-About__sidebar">PLANNING</dt>
+        <dt className="coa-About__sidebar"><ClockSvg />PLANNING</dt>
           <dd className="coa-About__sidebar__plain-text">In this stage, people are identifying and scoping the project. It includes leads or opportunities that have been identified, but are not yet in progress.
           </dd>
-        <dt className="coa-About__sidebar">LEARNING</dt>
+        <dt className="coa-About__sidebar"><ClockSvg />LEARNING</dt>
           <dd className="coa-About__sidebar__plain-text">This stage includes research to understand what type of solution, product, or service should be put in place. Activities in this stage include discovery, needs assessments, and requirements gathering.
 
           </dd>
-        <dt className="coa-About__sidebar">IN PROGRESS</dt>
+        <dt className="coa-About__sidebar"><ClockSvg />IN PROGRESS</dt>
           <dd className="coa-About__sidebar__plain-text">This stage involves executing the solution, product, or service, including design, development, testing, and solution implementation.
 
           </dd>
-        <dt className="coa-About__sidebar">COMPLETE/LIVE</dt>
+        <dt className="coa-About__sidebar"><ClockSvg />COMPLETE/LIVE</dt>
           <dd className="coa-About__sidebar__plain-text">In this stage, progress is completed, and solution, product, or service is now live or operational. It includes after-action reporting to document and measure project results. A solution, product, or service is expected to be refined or improved over time.
           </dd>
       </dl>
