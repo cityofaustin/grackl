@@ -13,20 +13,23 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "husky": "^0.14.3",
-    "lint-staged": "^4.2.3",
-    "prettier": "^1.7.4"
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "hoek": "^5.0.3"
   },
   "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "airtable": "^0.5.0",
     "camelize-object-key": "^1.0.4",
     "crypto": "^1.0.1",
-    "gatsby-source-airtable": "0.0.3",
-    "lodash": "^4.17.4",
-    "hoek": "^4.2.1"
+    "gatsby-source-airtable": "0.0.6",
+    "lodash": "^4.17.4"
   }
 }
