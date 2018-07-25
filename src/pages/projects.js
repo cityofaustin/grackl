@@ -37,7 +37,7 @@ export default ({ location, data }) => {
 
 export const query = graphql`
   query AirtableProject {
-    allAirtable(filter: { publish: { eq: true }}) {
+    allAirtable(filter: { Publish: { eq: true }}) {
       edges {
         node {
           id

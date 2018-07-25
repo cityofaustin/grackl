@@ -21,7 +21,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query AllAirtableQuery {
-    allAirtable(filter: { publish: { eq: true }}) {
+    allAirtable(filter: { Publish: { eq: true }}) {
       edges {
         node {
           id
