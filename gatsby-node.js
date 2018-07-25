@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/projects/${urlSlug(node.projectName)}`,
+      value: `/projects/${urlSlug(node['Project_Name'])}`,
     })
   }
 }
@@ -64,7 +64,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         allAirtable {
           edges {
             node {
-              projectName
+              Project_Name
               fields {
                 slug
               }

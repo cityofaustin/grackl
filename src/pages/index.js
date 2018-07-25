@@ -21,14 +21,14 @@ export default ({ data }) => {
 
 export const query = graphql`
   query AllAirtableQuery {
-    allAirtable(filter: { publish: { eq: true }}) {
+    allAirtable(filter: { Publish: { eq: true }}) {
       edges {
         node {
           id
-          projectName
-          projectSummary
-          publish
-          cityStrategicOutcomes
+          Project_Name
+          Project_summary
+          Publish
+          City_strategic_outcomes
           fields {
             slug
           }

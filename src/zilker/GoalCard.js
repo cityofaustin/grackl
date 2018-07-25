@@ -20,12 +20,12 @@ class GoalCard extends Component {
           <ul className="coa-Card__project-list">
             { projects.map((project, i) => {
               if (i > 3) return false
-              const { fields, projectName } = project.node
+              const { fields, Project_Name } = project.node
 
               return (
                 <li key={i}>
                   <Link to={fields.slug} className="coa-Card__project-list-item-link">
-                    {projectName}
+                    {Project_Name}
                   </Link>
                 </li>
               )

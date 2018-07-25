@@ -18,7 +18,7 @@ class GoalCardsGroup extends Component {
     })
 
     projects.map((project) => {
-      let projectGoals = project.node.cityStrategicOutcomes || []
+      let projectGoals = project.node.City_strategic_outcomes || []
 
       projectGoals.map((goal) => {
         _.find(projectsByCityGoal, (item) => {
