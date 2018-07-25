@@ -5,15 +5,15 @@ import departments from "../zilker/data/departments"
 
 import ClockSvg from "../zilker/ClockSvg.js"
 
-const renderDepts = (leadDepartment) => {
-  return departments[leadDepartment[0]]
+const renderDepts = (Lead_Department) => {
+  return departments[Lead_Department[0]]
 }
 
 export default ({ data }) => {
   const {
-    projectName, projectSummary, link, totalProjectBudget, fundingSource,
-    leadDepartment, linksToAnyPartnerOrganizationWebsites, partnerOrganizations,
-    cityStrategicOutcomes, contactName, contactEmail, projectStage, contactTitle, primaryStrategicOutcome, secondaryStrategicOutcome,
+    Project_Name, Project_summary, Link, Total_project_budget, Funding_source,
+    Lead_Department, City_strategic_outcomes, Contact_Name, Contact_email,
+    Project_stage, Contact_Title, Primary_strategic_outcome, Secondary_strategic_outcome,
   } = data.airtable;
 
   return (
@@ -22,22 +22,22 @@ export default ({ data }) => {
       <div className="col-xs-12 col-sm-8">
         <div>
           <h1 className="coa-project__name">
-            {projectName}
+            {Project_Name}
           </h1>
         </div>
           <h2 className="coa-project__summary">
-            {projectSummary}
+            {Project_summary}
           </h2>
         <div className="coa-project__summary">
-            { link && <a href={link} target="_blank">Learn more about this project.</a>}
+            { Link && <a href={Link} target="_blank">Learn more about this project.</a>}
         </div>
-        
-      
+
+
 
     <div>
         <h3 className="coa-project__phase">
           <ClockSvg />
-           &nbsp;{projectStage}
+           &nbsp;{Project_stage}
          </h3>
          <hr></hr>
 
@@ -48,8 +48,8 @@ export default ({ data }) => {
 
        <div className="usa-width-three-fourths">
             <p className="coa-project__body">Total budget of &nbsp;
-              <FormattedNumber value={totalProjectBudget} style="currency" currency="USD" minimumFractionDigits={0} />
-            <br />{fundingSource}</p>
+              <FormattedNumber value={Total_project_budget} style="currency" currency="USD" minimumFractionDigits={0} />
+            <br />{Funding_source}</p>
       </div>
 
     </div>
@@ -63,12 +63,12 @@ export default ({ data }) => {
           <p className="coa-project__body">
             Project champions: &nbsp;
             {
-              leadDepartment.length === 1 && departments[leadDepartment[0]] ?
-                 <a href={departments[leadDepartment[0]]["fields"]["Home page"]} target="_blank">
-                   {departments[leadDepartment[0]] && departments[leadDepartment[0]]["fields"]["Dept long name"]}
+              Lead_Department.length === 1 && departments[Lead_Department[0]] ?
+                 <a href={departments[Lead_Department[0]]["fields"]["Home page"]} target="_blank">
+                   {departments[Lead_Department[0]] && departments[Lead_Department[0]]["fields"]["Dept long name"]}
                  </a>
               :
-                leadDepartment.map((d, i) => {
+                Lead_Department.map((d, i) => {
                   return (
                     <a href={departments[d] && departments[d]["fields"]["Home page"]} target="_blank">
                       {departments[d] && departments[d]["fields"]["Dept long name"]}
@@ -90,10 +90,10 @@ export default ({ data }) => {
         </div>
         <div className="usa-width-three-fourths">
           <p className="coa-project__body">
-          <span className="coa-comma">{primaryStrategicOutcome} </span>
-          <span className="coa-comma">{secondaryStrategicOutcome}</span> 
+          <span className="coa-comma">{Primary_strategic_outcome} </span>
+          <span className="coa-comma">{Secondary_strategic_outcome}</span>
           </p>
-          
+
         </div>
       </div>
 
@@ -104,20 +104,20 @@ export default ({ data }) => {
         </div>
         <div className="usa-width-three-fourths">
           <p className="coa-project_body">
-            {contactName}, {contactTitle}
+            {Contact_Name}, {Contact_Title}
             <br />
-            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            <a href={`mailto:${Contact_email}`}>{Contact_email}</a>
           </p>
         </div>
-      
+
       </div>
-     
+
       </div>
       <div className="col-xs-12 col-sm-4">
-    
+
       </div>
       </div>
-     
+
   </section>
   )
 }
@@ -125,21 +125,19 @@ export default ({ data }) => {
 export const query = graphql`
   query ProjectQuery($slug: String!) {
     airtable(fields: { slug: { eq: $slug } }) {
-      projectName
-      projectSummary
-      link
-      totalProjectBudget
-      fundingSource
-      leadDepartment
-      partnerOrganizations
-      linksToAnyPartnerOrganizationWebsites
-      cityStrategicOutcomes
-      contactName
-      contactEmail
-      contactTitle
-      projectStage
-      primaryStrategicOutcome
-      secondaryStrategicOutcome
+      Project_Name
+      Project_summary
+      Link
+      Total_project_budget
+      Funding_source
+      Lead_Department
+      City_strategic_outcomes
+      Contact_Name
+      Contact_email
+      Contact_Title
+      Project_stage
+      Primary_strategic_outcome
+      Secondary_strategic_outcome
     }
   }
 `

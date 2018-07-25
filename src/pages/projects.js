@@ -19,11 +19,11 @@ export default ({ location, data }) => {
   const filteredProjects = !filteredByGoal && !filteredBySearch ? projects
     : filteredByGoal ?
         projects.filter((project) => {
-          return project.node.cityStrategicOutcomes.includes(filteredByGoal)
+          return project.node.City_strategic_outcomes.includes(filteredByGoal)
         })
     : projects.filter((project) => {
-        return project.node.projectName.toLowerCase().includes(searchString[1]) ||
-          project.node.projectSummary.toLowerCase().includes(searchString[1])
+        return project.node.Project_Name.toLowerCase().includes(searchString[1]) ||
+          project.node.Project_summary.toLowerCase().includes(searchString[1])
 
       })
 
@@ -41,15 +41,15 @@ export const query = graphql`
       edges {
         node {
           id
-          projectName
-          projectSummary
-          publish
-          cityStrategicOutcomes
-          primaryStrategicOutcome
-          secondaryStrategicOutcome
-          projectStage
-          leadDepartment
-          projectImage {
+          Project_Name
+          Project_summary
+          Publish
+          City_strategic_outcomes
+          Primary_strategic_outcome
+          Secondary_strategic_outcome
+          Project_stage
+          Lead_Department
+          Project_image {
             url
           }
           fields {

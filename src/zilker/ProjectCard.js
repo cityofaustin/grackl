@@ -10,33 +10,33 @@ class ProjectCard extends Component {
 
   render() {
     const {
-      projectName, id, projectSummary, primaryStrategicOutcome, secondaryStrategicOutcome, projectStage,
-      leadDepartment, projectImage, fields
+      Project_Name, id, Project_summary, Primary_strategic_outcome, Secondary_strategic_outcome, Project_stage,
+      Lead_Department, Project_image, fields
     } = this.props;
 
-    const projectImageUrl = projectImage ? projectImage[0].url : "http://lorempixel.com/400/200/city/1/"
+    const Project_imageUrl = Project_image ? Project_image[0].url : "http://lorempixel.com/400/200/city/1/"
 
-    const truncatedSummary = projectSummary.length > 100 ?
-      projectSummary.substring(0, 100) + "..." :
-      projectSummary
+    const truncatedSummary = Project_summary.length > 100 ?
+      Project_summary.substring(0, 100) + "..." :
+      Project_summary
 
 
     return (
       <Link to={fields.slug} style={{ textDecoration: 'none' }}>
         <div className="coa-ProjectCard" key={id}>
           <div className="coa-ProjectCard__image"
-               style={{ backgroundImage: `url(${projectImageUrl})`}}></div>
+               style={{ backgroundImage: `url(${Project_imageUrl})`}}></div>
           <div className="coa-ProjectCard__body">
             <span className="coa-ProjectCard__stage">
               <span className="coa-ProjectCard__svg">
                 <ClockSvg  />
               </span>
               <span className="coa-ProjectCard__stage-text">
-                {projectStage}
+                {Project_stage}
               </span>
             </span>
             <h3 className="coa-ProjectCard__title-text">
-                {projectName}
+                {Project_Name}
             </h3>
             <p className="coa-ProjectCard__plain-text">
               {truncatedSummary}
@@ -47,8 +47,8 @@ class ProjectCard extends Component {
               </dt>
               <dd className="coa-ProjectCard__plain-text">
                 {
-                  leadDepartment.length === 1 ? departments[leadDepartment[0]] && departments[leadDepartment[0]]["fields"]["Dept long name"] :
-                    leadDepartment.map((d, i) => {
+                  Lead_Department.length === 1 ? departments[Lead_Department[0]] && departments[Lead_Department[0]]["fields"]["Dept long name"] :
+                    Lead_Department.map((d, i) => {
                       return (
                         <span>
                           {departments[d] && departments[d]["fields"]["Dept long name"]}
@@ -63,8 +63,8 @@ class ProjectCard extends Component {
                 City Goals
               </dt>
               <dd className="coa-ProjectCard__plain-text">
-                <span className="coa-project__comma">{primaryStrategicOutcome} </span>
-                <span className="coa-project__comma">{secondaryStrategicOutcome}</span>
+                <span className="coa-project__comma">{Primary_strategic_outcome} </span>
+                <span className="coa-project__comma">{Secondary_strategic_outcome}</span>
                 
               </dd>
             </dl>

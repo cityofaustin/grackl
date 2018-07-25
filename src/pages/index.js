@@ -25,10 +25,10 @@ export const query = graphql`
       edges {
         node {
           id
-          projectName
-          projectSummary
-          publish
-          cityStrategicOutcomes
+          Project_Name
+          Project_summary
+          Publish
+          City_strategic_outcomes
           fields {
             slug
           }
