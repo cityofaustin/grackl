@@ -9,22 +9,23 @@ import "./scss/components/CardSection.scss"
 class CardSection extends Component {
 
   render() {
-    const { cards, type } = this.props
-    const foundProjects = type === 'project' && cards && !!cards.length;
+    const { cards, type } = this.props;
+    const foundProjects = (type === 'project') && cards && !!cards.length;
+    const goals = type === 'goals' && cards && !!cards.length;
 
     return (
       <section className="coa-CardSection usa-section usa-grid coa-flex-container coa-flex-wrap">
         <div className="row top-xs">
           {
-            !foundProjects && <EmptySearchResults />
+            !foundProjects && !goals && <EmptySearchResults />
           }
           {
-            foundProjects && cards.map((card) => {
-              return <ProjectCard {...card.node} />
+            foundProjects && cards.map((card, i) => {
+              return <ProjectCard {...card.node} key={i}/>
             })
           }
           {
-            (type === "goals") && <GoalCardsGroup {...this.props} />
+            goals && <GoalCardsGroup {...this.props} />
           }
         </div>
       </section>
