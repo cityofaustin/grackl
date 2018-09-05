@@ -5,7 +5,7 @@ class LearningSvg extends Component {
   render() {
     return (
         <svg className="icon-learning" width="40px" height="40px" viewBox="3 0 50 50" xmlns="http://www.w3.org/2000/svg" >
-<circle fill="none" stroke="#8E898C" stroke-width="2" stroke-miterlimit="10" cx="28.123" cy="27.543" r="24.124"/>
+<circle fill="none" stroke="#8E898C" strokeWidth="2" strokeMiterlimit="10" cx="28.123" cy="27.543" r="24.124"/>
 <path fill="#5B5B5D" d="M28.123,49.155c11.981,0,21.692-9.712,21.692-21.69c0-11.98-9.711-21.692-21.692-21.692
 	c-11.979,0-21.691,9.712-21.691,21.692C6.432,39.443,16.145,49.155,28.123,49.155"/>
 <path fill="#FFFFFF" d="M37.667,21.04l1.812,14.904c-1.021,0-2.027-0.225-3.008-0.669c-1.564-0.711-3.1-1.068-4.605-1.068

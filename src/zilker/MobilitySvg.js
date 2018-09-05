@@ -5,7 +5,7 @@ class MobilitySvg extends Component {
   render() {
     return (
         <svg className="icon-mobility" width="40px" height="40px" viewBox="3 0 50 50" xmlns="http://www.w3.org/2000/svg" >
-<circle fill="none" stroke="#8E898C" stroke-width="2" stroke-miterlimit="10" cx="28.123" cy="27.589" r="24.123"/>
+<circle fill="none" stroke="#8E898C" strokeWidth="2" strokeMiterlimit="10" cx="28.123" cy="27.589" r="24.123"/>
 <path fill="#5B5B5D" d="M28.123,49.2c11.981,0,21.692-9.712,21.692-21.691c0-11.98-9.711-21.692-21.692-21.692
 	c-11.979,0-21.691,9.712-21.691,21.692C6.432,39.488,16.145,49.2,28.123,49.2"/>
 <path fill="#FFFFFF" d="M36.694,29.042v6.729h-1.428V37.2c0,0.394-0.139,0.731-0.418,1.01c-0.279,0.279-0.617,0.418-1.01,0.418

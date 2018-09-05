@@ -16,7 +16,7 @@ class ProjectCard extends Component {
 
     const Project_imageUrl = Project_image ? Project_image[0].url : "http://lorempixel.com/400/200/city/1/"
 
-    const truncatedSummary = Project_summary.length > 100 ?
+    const truncatedSummary = Project_summary && Project_summary.length > 100 ?
       Project_summary.substring(0, 100) + "..." :
       Project_summary
 
@@ -65,7 +65,7 @@ class ProjectCard extends Component {
               <dd className="coa-ProjectCard__plain-text">
                 <span className="coa-project__comma">{Primary_strategic_outcome} </span>
                 <span className="coa-project__comma">{Secondary_strategic_outcome}</span>
-                
+
               </dd>
             </dl>
           </div>
