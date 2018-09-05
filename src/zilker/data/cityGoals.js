@@ -1,7 +1,7 @@
 const cityGoals = [
   {
-    title: "Government That Works",
-    fullTitle: "Government that works",
+    title: "Government that Works for All",
+    fullTitle: "Government that Works for All",
     description: "Believing that city government works effectively and collaboratively for all of us - that it is equitable, ethical, and innovative.",
   }, {
     title: "Economy & Affordability",
@@ -21,7 +21,7 @@ const cityGoals = [
     description: "Getting us where we want to go, when we want to get there, safely and cost-effectively.",
   }, {
     title: "Culture & Lifelong Learning",
-    fullTitle: "Cultural & Lifelong Learning",
+    fullTitle: "Culture & Lifelong Learning",
     description: "Being enriched by Austin's unique civic, cultural, ethnic, and learning opportunities.",
   },
 ];
