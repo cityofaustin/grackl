@@ -10,15 +10,15 @@ class ProjectCard extends Component {
 
   render() {
     const {
-      Project_Name, id, Project_summary, Primary_strategic_outcome, Secondary_strategic_outcome, Project_stage,
+      Project_Name, id, Description, Primary_strategic_outcome, Secondary_strategic_outcome, Project_stage,
       Lead_Department, Project_image, fields
     } = this.props;
 
     const Project_imageUrl = Project_image ? Project_image[0].url : "http://lorempixel.com/400/200/city/1/"
 
-    const truncatedSummary = Project_summary && Project_summary.length > 100 ?
-      Project_summary.substring(0, 100) + "..." :
-      Project_summary
+    const truncatedSummary = Description && Description.length > 100 ?
+      Description.substring(0, 100) + "..." :
+      Description
 
 
     return (

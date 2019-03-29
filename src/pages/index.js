@@ -26,7 +26,7 @@ export const query = graphql`
         node {
           id
           Project_Name
-          Project_summary
+          Description
           Publish
           City_strategic_outcomes
           fields {

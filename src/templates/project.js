@@ -11,7 +11,7 @@ const renderDepts = (Lead_Department) => {
 
 export default ({ data }) => {
   const {
-    Project_Name, Project_summary, Link, Total_project_budget, Funding_source,
+    Project_Name, Description, Link, Total_project_budget, Funding_source,
     Lead_Department, City_strategic_outcomes, Contact_Name, Contact_email,
     Project_stage, Contact_Title, Primary_strategic_outcome, Secondary_strategic_outcome,
   } = data.airtable;
@@ -26,7 +26,7 @@ export default ({ data }) => {
           </h1>
         </div>
           <h2 className="coa-project__summary">
-            {Project_summary}
+            {Description}
           </h2>
         <div className="coa-project__summary">
             { Link && <a href={Link} target="_blank">Learn more about this project.</a>}
@@ -126,7 +126,7 @@ export const query = graphql`
   query ProjectQuery($slug: String!) {
     airtable(fields: { slug: { eq: $slug } }) {
       Project_Name
-      Project_summary
+      Description
       Link
       Total_project_budget
       Funding_source
