@@ -30,6 +30,6 @@
     "camelize-object-key": "^1.0.4",
     "crypto": "^1.0.1",
     "gatsby-source-airtable": "0.0.6",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.11"
   }
 }

@@ -23,7 +23,7 @@ export default ({ location, data }) => {
         })
     : projects.filter((project) => {
         return project.node.Project_Name.toLowerCase().includes(searchString[1]) ||
-          project.node.Project_summary.toLowerCase().includes(searchString[1])
+          project.node.Description.toLowerCase().includes(searchString[1])
 
       })
 
@@ -42,7 +42,7 @@ export const query = graphql`
         node {
           id
           Project_Name
-          Project_summary
+          Description
           Publish
           City_strategic_outcomes
           Primary_strategic_outcome
