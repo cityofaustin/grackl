@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link'
+import { Link } from "gatsby"
 
 import "./scss/components/Card.scss"
 
@@ -18,9 +18,10 @@ class GoalCard extends Component {
         <div className="coa-Card__body">
           <span className="coa-Card__label-text">Recently Updated Projects</span>
           <ul className="coa-Card__project-list">
-            { projects.map((project, i) => {
+            {projects.map((project, i) => {
               if (i > 3) return false
-              const { fields, Project_Name } = project.node
+              const { fields } = project.node
+              const { Project_Name } = project.node.data
 
               return (
                 <li key={i}>

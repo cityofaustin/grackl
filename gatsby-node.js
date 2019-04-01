@@ -1,70 +1,34 @@
-// auto creating pages from markdown files
-// https://www.gatsbyjs.org/tutorial/part-four/#programatically-creating-pages-from-data
-
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const urlSlug = require('url-slug')
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  let slug;
+
+  if (node.internal.type === `Airtable`) {
+    slug = `/projects/${node.data['Project_Name'].replace(/ /g, "-")
+      .replace(/[,&]/g, "")
+      .toLowerCase()}/`
+
     createNodeField({
       node,
       name: `slug`,
       value: slug,
     })
   }
-  if (node.internal.type === `Airtable`) {
-    createNodeField({
-      node,
-      name: `slug`,
-      value: `/projects/${urlSlug(node['Project_Name'])}`,
-    })
-  }
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
-    graphql(`
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `
-).then(result => {
-    result.data.allMarkdownRemark.edges.map(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(`./src/templates/project.js`),
-        context: {
-          // Data passed to context is available in page queries as GraphQL variables.
-          slug: node.fields.slug,
-        },
-      })
-    })
-    resolve()
-    })
-  })
-}
-
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
-    graphql(`
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return new Promise(async (resolve) => {
+    const result = await graphql(`
       {
         allAirtable {
           edges {
             node {
-              Project_Name
+              table
+              data {
+                Project_Name
+              }
               fields {
                 slug
               }
@@ -73,18 +37,19 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `
-).then(result => {
-    result.data.allAirtable.edges.map(({ node }) => {
+    )
+
+
+    result.data.allAirtable.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/project.js`),
         context: {
-          // Data passed to context is available in page queries as GraphQL variables.
-          slug: node.fields.slug,
+          name: node.id,
         },
       })
-    })
-    resolve()
+
+      resolve()
     })
   })
 }

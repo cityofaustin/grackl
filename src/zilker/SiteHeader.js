@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SiteNav from './SiteNav';
-import Link from 'gatsby-link'
+import { Link } from "gatsby"
 
 import "./scss/components/SiteHeader.scss"
 

@@ -21,7 +21,7 @@ class CardSection extends Component {
           }
           {
             foundProjects && cards.map((card, i) => {
-              return <ProjectCard {...card.node} key={i}/>
+              return <ProjectCard {...card.node} key={i} />
             })
           }
           {
