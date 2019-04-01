@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import { Link } from "gatsby";
 import _ from 'lodash';
 
 import GoalCard from "../zilker/GoalCard"
@@ -9,7 +9,7 @@ import "./scss/components/Card.scss"
 class GoalCardsGroup extends Component {
 
   render() {
-    const { title, description, projects, fullTitle, cards } = this.props;
+    const { projects, cards } = this.props;
 
     let projectsByCityGoal = [];
 
@@ -18,7 +18,7 @@ class GoalCardsGroup extends Component {
     })
 
     projects.map((project) => {
-      let projectGoals = project.node.City_strategic_outcomes || []
+      let projectGoals = project.node.data.City_strategic_outcomes || []
 
       projectGoals.map((goal) => {
         _.find(projectsByCityGoal, (item) => {
@@ -29,26 +29,27 @@ class GoalCardsGroup extends Component {
       })
     })
 
+
     return (
       <div className="row around-xs">
-        { cards.map(({ title, fullTitle, description }, i) => {
+        {cards.map(({ title, fullTitle, description }, i) => {
 
-            const cardProjects = _.find(projectsByCityGoal, (item) => {
-              if (item.title === fullTitle) {
-                return item
-              }
-            })
+          const cardProjects = _.find(projectsByCityGoal, (item) => {
+            if (item.title === fullTitle) {
+              return item
+            }
+          })
 
-            return (
-              <div className="xs-col-4" key={i}>
-                <GoalCard title={title}
-                  fullTitle={fullTitle}
-                  description={description}
-                  projects={cardProjects.projects}
-                />
-              </div>
-            )
-          })}
+          return (
+            <div className="xs-col-4" key={i}>
+              <GoalCard title={title}
+                fullTitle={fullTitle}
+                description={description}
+                projects={cardProjects.projects}
+              />
+            </div>
+          )
+        })}
       </div>
 
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link'
+import { Link } from "gatsby"
 import ClockSvg from "../zilker/ClockSvg.js"
 import img from "./img/austin_downtown.jpg"
 import "./scss/components/ProjectCard.scss"
@@ -11,8 +11,9 @@ class ProjectCard extends Component {
   render() {
     const {
       Project_Name, id, Description, Primary_strategic_outcome, Secondary_strategic_outcome, Project_stage,
-      Lead_Department, Project_image, fields
-    } = this.props;
+      Lead_Department, Project_image
+    } = this.props.data;
+    const { fields } = this.props
 
     const Project_imageUrl = Project_image ? Project_image[0].url : "http://lorempixel.com/400/200/city/1/"
 
@@ -25,18 +26,18 @@ class ProjectCard extends Component {
       <Link to={fields.slug} style={{ textDecoration: 'none' }}>
         <div className="coa-ProjectCard" key={id}>
           <div className="coa-ProjectCard__image"
-               style={{ backgroundImage: `url(${Project_imageUrl})`}}></div>
+            style={{ backgroundImage: `url(${Project_imageUrl})` }}></div>
           <div className="coa-ProjectCard__body">
             <span className="coa-ProjectCard__stage">
               <span className="coa-ProjectCard__svg">
-                <ClockSvg  />
+                <ClockSvg />
               </span>
               <span className="coa-ProjectCard__stage-text">
                 {Project_stage}
               </span>
             </span>
             <h3 className="coa-ProjectCard__title-text">
-                {Project_Name}
+              {Project_Name}
             </h3>
             <p className="coa-ProjectCard__plain-text">
               {truncatedSummary}
@@ -52,11 +53,11 @@ class ProjectCard extends Component {
                       return (
                         <span>
                           {departments[d] && departments[d]["fields"]["Dept long name"]}
-                          { i == 0 ? <span>, </span> : '' }
+                          {i == 0 ? <span>, </span> : ''}
                         </span>
                       )
                     }
-                  )
+                    )
                 }
               </dd>
               <dt className="coa-ProjectCard__label">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { navigateTo } from "gatsby-link"
+import { navigate } from "gatsby-link"
 
 class Search extends Component {
   state = { searchString: '' }
@@ -13,7 +13,7 @@ class Search extends Component {
 
   navigateToSearch = (e) => {
     e.preventDefault();
-    navigateTo(`/projects?search=${this.state.searchString}`)
+    navigate(`/projects?search=${this.state.searchString}`)
   }
 
   render() {

@@ -15,10 +15,20 @@ module.exports = {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: `keyssV4KNWdZD5AGR`,
-        baseId: `appuWc6duIrqvsZQt`,
-        tableName: `projects`,
-        tableView: `Grid view`
+        tables: [
+          {
+            baseId: `appuWc6duIrqvsZQt`,
+            tableName: `projects`,
+            tableView: `Grid view`,
+          }
+        ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-110716917-1",
+      },
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,

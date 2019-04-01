@@ -1,6 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 
+import Layout from "../components/layout"
 import SiteIntro from "../zilker/SiteIntro"
 import SectionBreakBar from "../zilker/SectionBreakBar"
 import CardSection from "../zilker/CardSection"
@@ -11,24 +12,26 @@ export default ({ data }) => {
   const projects = data.allAirtable.edges;
 
   return (
-    <div>
+    <Layout data={data}>
       <SiteIntro />
       <SectionBreakBar />
       <CardSection cards={cityGoals} projects={projects} type="goals" />
-    </div>
+    </Layout>
   )
 }
 
 export const query = graphql`
   query AllAirtableQuery {
-    allAirtable(filter: { Publish: { eq: true }}) {
+    allAirtable(filter: {table: {eq: "projects"}, data: {Publish: {eq: true}}}) {
       edges {
         node {
           id
-          Project_Name
-          Description
-          Publish
-          City_strategic_outcomes
+          data {
+            Project_Name
+            Description
+            Publish
+            City_strategic_outcomes
+          }
           fields {
             slug
           }

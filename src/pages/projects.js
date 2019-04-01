@@ -1,10 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 
 import SiteIntro from "../zilker/SiteIntro"
 import SectionBreakBar from "../zilker/SectionBreakBar"
 import CardSection from "../zilker/CardSection"
 import Search from "../zilker/Search"
+import Layout from "../components/layout"
 
 
 import cityGoals from "../zilker/data/cityGoals"
@@ -18,39 +19,41 @@ export default ({ location, data }) => {
 
   const filteredProjects = !filteredByGoal && !filteredBySearch ? projects
     : filteredByGoal ?
-        projects.filter((project) => {
-          return project.node.City_strategic_outcomes.includes(filteredByGoal)
-        })
-    : projects.filter((project) => {
-        return project.node.Project_Name.toLowerCase().includes(searchString[1]) ||
-          project.node.Description.toLowerCase().includes(searchString[1])
+      projects.filter((project) => {
+        return project.node.data.City_strategic_outcomes.includes(filteredByGoal)
+      })
+      : projects.filter((project) => {
+        return project.node.data.Project_Name.toLowerCase().includes(searchString[1]) ||
+          project.node.data.Description.toLowerCase().includes(searchString[1])
 
       })
 
   return (
-    <div>
+    <Layout>
       <SectionBreakBar />
       <CardSection cards={filteredProjects} type="project" />
-    </div>
+    </Layout>
   )
 }
 
 export const query = graphql`
   query AirtableProject {
-    allAirtable(filter: { Publish: { eq: true }}) {
+    allAirtable(filter: {table: {eq: "projects"}, data: {Publish: {eq: true}}}) {
       edges {
         node {
           id
-          Project_Name
-          Description
-          Publish
-          City_strategic_outcomes
-          Primary_strategic_outcome
-          Secondary_strategic_outcome
-          Project_stage
-          Lead_Department
-          Project_image {
-            url
+          data {
+            Project_Name
+            Description
+            Publish
+            City_strategic_outcomes
+            Primary_strategic_outcome
+            Secondary_strategic_outcome
+            Project_stage
+            Lead_Department
+            Project_image {
+              url
+            }
           }
           fields {
             slug

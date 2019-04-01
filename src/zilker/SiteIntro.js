@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link'
+import { Link } from "gatsby"
 
 import Search from "../zilker/Search"
 
@@ -27,7 +27,7 @@ class SiteIntro extends Component {
           </div>
 
           <div className="col-xs-12 col-sm-4 first-xs last-sm">
-            <img src={img} alt="City of Austin from above" align="center"/>
+            <img src={img} alt="City of Austin from above" align="center" />
           </div>
         </div>
       </section>
