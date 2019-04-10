@@ -129,8 +129,8 @@ export default ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query ProjectQuery($slug: String) {
-    airtable(table: {eq: "projects"}, fields: {slug: {eq: $slug }}) {
+  query($name: String) {
+    airtable(table: { eq: "projects" }, data: { Project_Name: { eq: $name } }) {
       data {
         Project_Name
         Description
@@ -148,4 +148,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

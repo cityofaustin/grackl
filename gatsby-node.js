@@ -45,9 +45,10 @@ exports.createPages = ({ graphql, actions }) => {
         path: node.fields.slug,
         component: path.resolve(`./src/templates/project.js`),
         context: {
-          name: node.id,
-        },
-      })
+          name: node.data.Project_Name,
+          path: node.fields.slug
+        }
+      });
 
       resolve()
     })
