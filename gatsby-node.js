@@ -1,25 +1,26 @@
-const path = require(`path`)
+const path = require(`path`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   let slug;
 
   if (node.internal.type === `Airtable`) {
-    slug = `/projects/${node.data['Project_Name'].replace(/ /g, "-")
+    slug = `/projects/${node.data["Project_Name"]
+      .replace(/ /g, "-")
       .replace(/[,&]/g, "")
-      .toLowerCase()}/`
+      .toLowerCase()}/`;
 
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
-    })
+      value: slug
+    });
   }
-}
+};
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  return new Promise(async (resolve) => {
+  const { createPage } = actions;
+  return new Promise(async resolve => {
     const result = await graphql(`
       {
         allAirtable {
@@ -36,11 +37,10 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `
-    )
-
+    `);
 
     result.data.allAirtable.edges.forEach(({ node }) => {
+      console.log(node);
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/project.js`),
@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       });
 
-      resolve()
-    })
-  })
-}
+      resolve();
+    });
+  });
+};
